@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易计算器</title>
+<style>
+div{
+	font-size: 50px;
+	color: #f00;
+	text-align: center;
+	list-style: 400px;
+}
+
+</style>
+<script>
+	window.onload=function(){
+		var Btn=document.getElementById('btn');
+		var Txt=document.getElementById('Txt1');
+		var Tdiv=document.getElementById('div1');
+		
+			//sel.onchange=function(){
+    		//	alert(this.value); 
+			//}
+			
+		
+		Btn.onclick=function(){
+			Tdiv.innerHTML=Txt.value/40;
+			
+			}
+			
+		
+		}
+</script>
+</head>
+
+<body>
+<input type="text" id="Txt1" style="width:400px; height:50px; font-size: 30px;"/>
+<input type="button" value="计算" id="btn"/>
+<div id="div1">1</div>
+</body>
+</html>
