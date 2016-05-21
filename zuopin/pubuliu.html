@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="瀑布流" />
+<title>瀑布流</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+.box{ width:666px; margin:0 auto; overflow:hidden; }
+.box ul{ width:200px; border:1px solid #000; float:left; margin:0 10px; }
+.box li{ margin:10px 0; }
+</style>
+<script>
+function rnd(n,m){
+	return Math.floor(Math.random()*(m-n)+n);
+}
+function createLi(){
+	var oLi=document.createElement('li');
+	oLi.style.height=rnd(150,300)+'px';
+	oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+	
+	return oLi;
+}
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var aUl=oBox.children;
+	var N=20;
+	
+	function fn(){
+		for(var i=0; i<N; i++){
+			var arr=[];
+			for(var j=0; j<aUl.length; j++){
+				arr.push(aUl[j]);
+			}
+			arr.sort(function (u1,u2){
+				return u1.offsetHeight-u2.offsetHeight;
+			});
+			arr[0].appendChild(createLi());
+		}
+	}
+	fn();
+	
+	window.onscroll=window.onresize=function (){
+		var ch=document.documentElement.clientHeight;
+		var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+		
+		if(oBox.offsetHeight-ch-500<=scrollT){
+			fn();
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<div class="box" id="box">
+    	<ul></ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

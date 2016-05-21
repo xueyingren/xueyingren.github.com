@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3d</title>
+<style>
+*{margin:0; padding:0;}
+.box{width:700px; height:400px; margin:100px auto; position:relative; -webkit-transform:perspective(800px);}
+.box span{ -webkit-transform-style:preserve-3d; -webit-transform: perspective(800px) rotateY(0deg); position:absolute; top:0; left:0;}
+.box span em{position:absolute; top:0; left:0; width:100%; height:100%;} 
+.box span .front{ -webkit-transform:translateZ(1px); background:url(img/1.jpg) no-repeat;}
+.box span .back{ -webkit-transform:translateZ(-1px) scale(-1,1); background:url(img/2.jpg) no-repeat;}
+</style>
+<script>
+window.onload=function(){
+	var oBox = document.querySelector('.box');
+	var C = 7;
+	var R = 4;
+	for(var i=0;i<C;i++){
+		for(var j=0;j<R;j++){
+			var oS = document.createElement('span');
+			oS.innerHTML = '<em class="front"></em><em class="back"></em>';
+			var w = oBox.offsetWidth/C;
+			var h =  oBox.offsetHeight/R;
+			oS.style.width = w+'px';
+			oS.style.height = h+'px';
+			oBox.appendChild(oS);
+			oS.style.left = i*w+'px';
+			oS.style.top = j*h+'px';
+			var oFront = oS.children[0];
+			var oBack = oS.children[1];
+			oFront.style.backgroundPosition = -i*w+'px '+-j*h+'px';
+			oBack.style.backgroundPosition = -i*w+'px '+-j*h+'px';
+			oS.c = i;
+			oS.r = j;
+		}
+		
+	}
+	var iNow = 0;
+	var bOk = false;
+	
+	// oBox.onclick=function(){
+	setInterval(function(){
+		if(bOk)return;
+		bOk = true;
+		iNow++;
+		console.log(iNow);
+		var aS = document.querySelectorAll('span');
+		for(var i=0;i<aS.length;i++){
+			(function(index){
+				setTimeout(function(){
+					aS[index].style.WebkitTransition = '1s all ease';
+					aS[index].style.WebkitTransform = 'perspective(800px) rotateY(180deg)';
+				},(aS[i].c+aS[i].r)*100);
+			})(i);
+		}
+		function fnEnd(){
+			aS[aS.length-1].removeEventListener('transitionend',fnEnd,false);
+			for(var i=0;i<aS.length;i++){
+				aS[i].style.WebkitTransition = 'none';
+				aS[i].style.WebkitTransform = 'perspective(800px) rotateY(0deg)';
+				var oFront = aS[i].children[0];
+				var oBack = aS[i].children[1];
+				oFront.style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
+				oBack.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.jpg)';
+			}
+			bOk = false;
+		}
+		aS[aS.length-1].addEventListener('transitionend',fnEnd,false);
+
+	},2000)
+};
+</script>
+</head>
+
+<body>
+<div class="box">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

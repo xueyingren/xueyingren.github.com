@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>作品展示</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+#box{ width:800px; margin:20px auto; border: 1px solid #000; height:358px; position:relative; overflow: hidden; }
+/*.div1{
+	width:800px; margin:20px auto; height:358px; position: relative;
+}*/
+#box ul{ position:absolute; left:0; top:50%; margin-top:-90px; }
+#box li{ float:left; height:179px; width:260px; position:relative; }
+#box img{ width:260px; height:180px; }
+
+#box span{ font-size:30px; color:#000; position:absolute; left:70px; top:70px; background:#fff; padding:20px; }
+/*.left{
+	width: 50px;
+    height: 104px;
+    background: url(img2/ui.png) 0 0 no-repeat #000;
+    position: absolute;
+    left: -52px;
+    top:120px;
+    z-index: 999;
+}
+.right{
+	width: 50px;
+    height: 104px;
+    background: url(img2/ui.png) -50px 0 no-repeat #000;
+    position: absolute;
+    right: -52px;
+    top: 120px;
+     z-index: 999;
+}*/
+</style>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var oUl=oBox.children[0];
+	var aLi=oUl.children;
+	var aImg=oUl.getElementsByTagName('img');
+	
+	//算ul宽度
+	oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+	var disC=oBox.offsetWidth/2;
+	
+	oUl.onmousedown=function (ev){
+		var oEvent=ev||event;
+		var disX=oEvent.clientX-oUl.offsetLeft;
+		document.onmousemove=function (ev){
+			var oEvent=ev||event;
+			var l=oEvent.clientX-disX;
+			
+			if(l>disC-(0.5)*aLi[0].offsetWidth){
+				l=disC-(0.5)*aLi[0].offsetWidth;
+			}
+			if(l<disC-(aLi.length-1+0.5)*aLi[0].offsetWidth){
+				l=disC-(aLi.length-1+0.5)*aLi[0].offsetWidth;
+			}
+			
+			oUl.style.left=l+'px';
+			
+			setSize();
+		};
+		document.onmouseup=function (){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+	
+	function setSize(){
+		for(var i=0; i<aLi.length; i++){
+			//中间点X轴
+			var l=Math.abs(disC-(aLi[i].offsetLeft+oUl.offsetLeft+aLi[i].offsetWidth/2));
+			var scale=1-l/500;
+			scale<0.5&&(scale=0.5);
+			aImg[i].style.width=scale*520+'px';
+			aImg[i].style.height=scale*358+'px';
+			aImg[i].style.marginTop=-(aImg[i].offsetHeight-179)/2+'px';
+			aImg[i].style.marginLeft=-(aImg[i].offsetWidth-260)/2+'px';
+			aLi[i].style.zIndex=scale*1000000000;
+			
+		}
+	}
+	setSize();
+};
+</script>
+</head>
+
+<body>
+<div class="div1">	
+	<div id="box">
+		
+    	<ul>
+        	<li><img src="img2/1.jpg" /></li>
+        	<li><img src="img2/2.jpg" /></li>
+        	<li><img src="img2/3.jpg" /></li>
+        	<li><img src="img2/4.jpg" /></li>
+        	<li><img src="img2/5.jpg" /></li>
+        	<li><img src="img2/6.jpg" /></li>
+        	<li><img src="img2/7.jpg" /></li>
+        	<li><img src="img2/8.jpg" /></li>
+        </ul>
+    </div>
+</div>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

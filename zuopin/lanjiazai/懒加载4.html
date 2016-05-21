@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>懒加载</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+ul{ width:966px; margin:0 auto; overflow:hidden; }
+li{ width:300px; height:300px; float:left; border:1px solid red; margin:10px; }
+img{ width:300px; height:300px; }
+</style>
+<script>
+window.onload=window.onscroll=window.onresize=function (){
+	var oUl=document.body.children[0];
+	var aImg=oUl.getElementsByTagName('img');
+	
+	var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+	var clientH=document.documentElement.clientHeight;
+	var clientB=scrollT+clientH;
+	
+	for(var i=0; i<aImg.length; i++){
+		if(clientB-300>aImg[i].offsetTop){
+			aImg[i].src=aImg[i].getAttribute('_src');
+		}
+	}
+	
+};
+</script>
+</head>
+
+<body>
+	<ul>
+    	<li><img _src="img/b1.jpg" alt="" /></li>
+    	<li><img _src="img/b2.jpg" alt="" /></li>
+    	<li><img _src="img/b3.jpg" alt="" /></li>
+    	<li><img _src="img/b4.jpg" alt="" /></li>
+    	<li><img _src="img/b5.jpg" alt="" /></li>
+    	<li><img _src="img/b6.jpg" alt="" /></li>
+    	<li><img _src="img/b7.jpg" alt="" /></li>
+    	<li><img _src="img/b8.jpg" alt="" /></li>
+    	<li><img _src="img/b9.jpg" alt="" /></li>
+    	<li><img _src="img/b10.jpg" alt="" /></li>
+    	<li><img _src="img/b1.jpg" alt="" /></li>
+    	<li><img _src="img/b2.jpg" alt="" /></li>
+    	<li><img _src="img/b3.jpg" alt="" /></li>
+    	<li><img _src="img/b4.jpg" alt="" /></li>
+    	<li><img _src="img/b5.jpg" alt="" /></li>
+    	<li><img _src="img/b6.jpg" alt="" /></li>
+    	<li><img _src="img/b7.jpg" alt="" /></li>
+    	<li><img _src="img/b8.jpg" alt="" /></li>
+    	<li><img _src="img/b9.jpg" alt="" /></li>
+    	<li><img _src="img/b10.jpg" alt="" /></li>
+    	<li><img _src="img/b1.jpg" alt="" /></li>
+    	<li><img _src="img/b2.jpg" alt="" /></li>
+    	<li><img _src="img/b3.jpg" alt="" /></li>
+    	<li><img _src="img/b4.jpg" alt="" /></li>
+    	<li><img _src="img/b5.jpg" alt="" /></li>
+    	<li><img _src="img/b6.jpg" alt="" /></li>
+    	<li><img _src="img/b7.jpg" alt="" /></li>
+    	<li><img _src="img/b8.jpg" alt="" /></li>
+    	<li><img _src="img/b9.jpg" alt="" /></li>
+    	<li><img _src="img/b10.jpg" alt="" /></li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

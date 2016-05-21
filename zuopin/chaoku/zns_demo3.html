@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超酷数码钟表</title>
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+</head>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+};
+window.onload=function (){
+	var oYear=document.getElementById('year');
+	var aImg=oYear.getElementsByTagName('img');
+	var oTime=document.getElementById('time');
+	var aImg2=oTime.getElementsByTagName('img');
+	var num2=document.getElementById('num2');
+	
+	tick();
+	function tick(){
+		var oDate=new Date();
+		var str=oDate.getFullYear()+'-'+toDou((oDate.getMonth()+1))+'-'+toDou(oDate.getDate())+'-';
+		var str2=toDou(oDate.getHours())+'-'+toDou(oDate.getMinutes())+'-'+toDou(oDate.getSeconds())+'-'+'-';
+		
+		for(var i=0; i<aImg.length; i++){
+			if(str.charAt(i)!='-'){
+				aImg[i].src='images/'+str.charAt(i)+'.png';
+			}
+		}
+		for(var i=0; i<aImg2.length; i++){
+			if(str2.charAt(i)!='-'){
+				aImg2[i].src='images/'+str2.charAt(i)+'.png';
+			}
+		}
+		
+		var w=oDate.getDay();
+		var arr=['seven','one','two','three','four','five','six'];
+		
+		num2.src='images/'+arr[w]+'.png';
+	}
+	setInterval(tick,1000);
+	
+};
+</script>
+<body>
+
+<div id="clock" class="date">
+    <h2><img src="images/title.png" /></h2>
+    <div class="year" id="year">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/year.png" alt="year" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/month.png" alt="month" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="time">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img id="num2" class="num2" src="images/one.png" alt="one" />
+    </div>
+</div>
+
+</body>
+</html>

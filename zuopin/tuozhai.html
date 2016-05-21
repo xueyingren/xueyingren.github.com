@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="九宫格拖拽" />
+<style>
+*{ margin:0; padding:0; list-style:none;}
+#box{ width:300px; height:300px; background:#ccc; position:absolute; left:200px; top:100px;}
+.r{ width:20px; height:100%; position:absolute; right:0; top:0; background:green;}
+.b{ width:100%; height:20px; position:absolute; left:0; bottom:0; background:green;}
+.rb{ width:20px; height:20px; position:absolute; right:0; bottom:0; background:red;}
+.l{ width:20px; height:100%; position:absolute; left:0; top:0; background:green;}
+.t{ width:100%; height:20px; position:absolute; left:0; top:0; background:green;}
+.lb{ width:20px; height:20px; background:red; position:absolute; left:0; bottom:0;}
+.lt{ width:20px; height:20px; background:red; position:absolute; left:0; top:0;}
+.rt{ width:20px; height:20px; position:absolute; right:0; top:0; background:red;}
+</style>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var aDiv=oBox.children;
+	for(var i=0; i<aDiv.length; i++){
+		changeSize(aDiv[i]);
+	}
+	
+	function changeSize(obj){
+		obj.onmousedown=function (ev){
+			var oEvent=ev||event;
+			var oldX=oEvent.clientX;
+			var oldW=oBox.offsetWidth;
+			var oldY=oEvent.clientY;
+			var oldH=oBox.offsetHeight;
+			var oldL=oBox.offsetLeft;
+			var oldT=oBox.offsetTop;
+			document.onmousemove=function (ev){
+				var oEvent=ev||event;
+				if(obj.className.indexOf('l')!=-1){
+					oBox.style.width=oldW-(oEvent.clientX-oldX)+'px';
+					oBox.style.left=oldL-(oldX-oEvent.clientX)+'px';
+					
+				}
+				if(obj.className.indexOf('r')!=-1){
+					oBox.style.width=oldW+oEvent.clientX-oldX+'px';
+				}
+				if(obj.className.indexOf('t')!=-1){
+					oBox.style.height=oldH-(oEvent.clientY-oldY)+'px';
+					oBox.style.top=oldT-(oldY-oEvent.clientY)+'px';
+				}
+				if(obj.className.indexOf('b')!=-1){
+					oBox.style.height=oldH+oEvent.clientY-oldY+'px';
+				}
+				
+			};
+			document.onmouseup=function (){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				obj.releaseCapture&&obj.releaseCapture();
+			};
+			obj.setCapture&&obj.setCapture();
+			return false;
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div class="r"></div>
+	<div class="b"></div>
+    <div class="rb"></div>
+    <div class="l"></div>
+    <div class="t"></div>
+    <div class="lb"></div>
+    <div class="lt"></div>
+    <div class="rt"></div>
+</div>
+</body>
+</html>

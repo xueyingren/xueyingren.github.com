@@ -3,7 +3,7 @@
 	var left = 0;
 	var iSpeed = 20;
 	var timer = null;
-	window.move = function (obj,iTarget){
+	window.move1 = function (obj,iTarget){
 		clearInterval(timer);
 		timer = setInterval(function(){
 			iSpeed += (iTarget-left)/5;
