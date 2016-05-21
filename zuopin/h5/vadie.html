@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义视频播放器</title>
+<style>
+*{margin:0; padding:0;}
+body{ text-align:center;}
+video{width:800px;}
+.box {width:800px; height:40px; background:#000; margin:0 auto; overflow:hidden;}
+.btn_box{float:left; height:40px;  line-height:40px; width:110px;}
+
+.volume_box{float:right; width:200px; height:40px; line-height:40px; color:#fff;}
+.volume_box span{float:left; width:40px; text-align:center;}
+.volume_box .v_box{float:left; width:150px; height:10px; background:#fff; margin-top:15px; position:relative;}
+.v_box .v_box_bar{height:100%; width:100%; background:#399;}
+.v_box .v_btn{position:absolute; top:0; right:0; margin-top:-5px; width:10px; height:20px; background:#f90; cursor:pointer;}
+.pro_box{ float:left; width:470px; height:40px; line-height:40px; color:#fff; padding-left:20px;}
+.pro_box span{float:left;width:100px; text-align:center;}
+.pro_box .p_box{float:left;width:360px; height:10px; background:#fff; margin-top:15px; position:relative; }
+.p_box .p_box_bar{height:100%; width:0; background:#399;}
+.p_box .p_btn{position:absolute; top:0; left:0; width:10px;height:20px; background:#f90; margin-top:-5px; cursor:pointer;}
+</style>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+function getCurTime(s){
+	var m = Math.floor(s/60);
+	s%=60;
+	return toDou(m)+':'+toDou(Math.floor(s));
+}
+window.onload=function(){
+	var oV = document.getElementById('v1');
+	var oPlay = document.querySelector('.play');
+	var oPause = document.querySelector('.pause');
+	var oStop = document.querySelector('.stop');
+	var oVBox = document.querySelector('.v_box');
+	var oVBar = document.querySelector('.v_box_bar');
+	var oVBtn = document.querySelector('.v_btn');
+	
+	var oTBox = document.querySelector('.time_box');
+	
+	var oPBox = document.querySelector('.p_box');
+	var oPBar = document.querySelector('.p_box_bar');
+	var oPBtn = document.querySelector('.p_btn');
+	
+	
+	oPlay.onclick=function(){
+		oV.play();
+	};
+	oPause.onclick=function(){
+		oV.pause();
+	};
+	oStop.onclick=function(){
+		oV.pause();
+		oV.currentTime = 0;
+	};
+	
+	
+	oVBtn.onmousedown=function(ev){
+		var disX = ev.pageX-oVBtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l = ev.pageX-disX;
+			if(l<0){
+				l = 0;
+			}else if(l>oVBox.offsetWidth-oVBtn.offsetWidth){
+				l = oVBox.offsetWidth-oVBtn.offsetWidth;
+			}
+			oVBtn.style.left = l+'px';
+			
+			var scale = l/(oVBox.offsetWidth-oVBtn.offsetWidth);
+			oVBar.style.width = scale*100+'%';
+			oV.volume = scale;
+			
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+	
+	oV.ontimeupdate = function(){
+		oTBox.innerHTML = getCurTime(oV.currentTime)+'/'+getCurTime(oV.duration);
+		var scale = oV.currentTime/oV.duration;
+		oPBar.style.width = scale*100+'%';
+		oPBtn.style.left = scale*(oPBox.offsetWidth-oPBtn.offsetWidth)+'px';
+	};
+	oPBtn.onmousedown=function(ev){
+		var disX = ev.pageX-oPBtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l = ev.pageX-disX;
+			if(l<0){
+				l = 0;
+			}else if(l>(oPBox.offsetWidth-oPBtn.offsetWidth)){
+				l=(oPBox.offsetWidth-oPBtn.offsetWidth);
+			}
+			oPBtn.style.left = l+'px';
+			var scale = l/(oPBox.offsetWidth-oPBtn.offsetWidth);
+			oPBar.style.width = scale*100+'%';
+			oV.currentTime = scale*oV.duration;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<video id="v1" src="http://images.sohu.com/ytv/SH/Coke/64036020120714021103.mp4"></video>
+<div class="box">
+	<div class="btn_box">
+		<input type="button" value="播放" class="play" />
+		<input type="button" value="暂停" class="pause" />
+		<input type="button" value="停止" class="stop" />
+	</div>
+	<div class="pro_box">
+		<div class="p_box">
+			<div class="p_box_bar"></div>
+			<div class="p_btn"></div>
+		</div>
+		<span class="time_box">00:00/00:00</span>
+	</div>
+	<div class="volume_box">
+		<span>音量</span>
+		<div class="v_box">
+			<div class="v_box_bar"></div>
+			<div class="v_btn"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

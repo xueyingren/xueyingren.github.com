@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<title></title>
+<link rel="stylesheet" href="css/base.css" />
+<style>
+
+.div1{
+	width: 50px;
+	height: 50px;
+	background: #f00;
+	position: absolute; left:0; top: 0px;
+	border-top-right-radius:25px;
+	border-bottom-right-radius:25px;
+}
+
+.div2{
+	width: 50px;
+	height: 50px;
+	background: #f00;
+	position: absolute; 
+	left:200px;
+	top: 200px; 
+
+}
+
+.ceng{
+	width: 500px;
+	height: 500px;
+	background: #fff;
+	position: absolute; left: 50%; top: 50%;
+	margin-left: -250px;
+	margin-top: -250px;
+	border: 1px solid #f00;
+}
+.span{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	color: #f00;
+	line-height: 40px;
+}
+li{
+	width: 400px;
+	height: 300px;
+	background: #ccc;
+	margin-left: 50px;
+	display: none;
+	margin-top: 30px;
+}
+</style>
+<script>
+
+function dao(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+function dt(arr,d){
+	for(var i=0; i<arr.length; i++){
+		if(arr[i]==d){
+			return true;
+		}
+	}
+	return false;
+}
+
+window.onload=function(){
+	//var oDiv=document.getElementsByTagName('p')[0];
+	var oDiv=document.getElementsByTagName('div')[0];
+	var oDiv2=document.getElementsByTagName('div')[1];
+	var oFen=document.getElementById('fen');
+	var arr=[]
+	var times=null;
+	var ist=0
+	document.onkeydown=function(ev){
+		var oEvent=ev||event;
+		clearInterval(times);
+		var Gao=50;
+		times=setInterval(function (){
+			var CH=oDiv.offsetWidth;
+			if(oEvent.keyCode==37){
+				oDiv.style.left=oDiv.offsetLeft-10+'px';
+				oDiv.style.borderTopLeftRadius='25px';
+				oDiv.style.borderBottomLeftRadius='25px';
+				oDiv.style.borderTopRightRadius='0px';
+				oDiv.style.borderBottomRightRadius='0px';
+				if(oDiv.offsetLeft<=0){
+					alert('你挂了');
+					clearInterval(times);
+					oC.style.display='block';
+				}
+
+				// if(oDiv.offsetWidth<oDiv.offsetHeight){
+
+				// 	oDiv.style.width=oDiv.offsetHeight+'px';
+				// 	oDiv.style.height=Gao+'px';
+				// }
+
+			}
+			if(oEvent.keyCode==38){
+				oDiv.style.top=oDiv.offsetTop-10+'px';
+				oDiv.style.borderTopRightRadius='25px';
+				oDiv.style.borderTopLeftRadius='25px';
+				oDiv.style.borderBottomLeftRadius='0px';
+				oDiv.style.borderBottomRightRadius='0px';
+
+				// if(oDiv.offsetWidth>oDiv.offsetHeight){
+
+				// 	oDiv.style.height=oDiv.offsetWidth+'px';
+				// 	oDiv.style.width=Gao+'px';
+				// }
+				if(oDiv.offsetTop<=0){
+					alert('你挂了');
+					clearInterval(times);
+					oC.style.display='block';
+				}
+			}
+			if(oEvent.keyCode==39){
+				oDiv.style.left=oDiv.offsetLeft+10+'px';
+				oDiv.style.borderTopRightRadius='25px';
+				oDiv.style.borderBottomRightRadius='25px';
+				oDiv.style.borderTopLeftRadius='0px';
+				oDiv.style.borderBottomLeftRadius='0px';
+				if((oDiv.offsetLeft+50)>=1360){
+					alert('你挂了');
+					clearInterval(times);
+					oC.style.display='block';
+				}
+
+				// if(oDiv.offsetWidth<oDiv.offsetHeight){
+
+				// 	oDiv.style.width=oDiv.offsetHeight+'px';
+				// 	oDiv.style.height=Gao+'px';
+				// }
+			}
+			if(oEvent.keyCode==40){
+				oDiv.style.top=oDiv.offsetTop+10+'px';
+				oDiv.style.borderBottomLeftRadius='25px';
+				oDiv.style.borderBottomRightRadius='25px';
+				oDiv.style.borderTopRightRadius='0px';
+				oDiv.style.borderTopLeftRadius='0px';
+				if((oDiv.offsetTop+50)>=650){
+					alert('你挂了');
+					clearInterval(times);
+					oC.style.display='block';
+				}
+				// if(oDiv.offsetWidth>oDiv.offsetHeight){
+
+				// 	oDiv.style.height=oDiv.offsetWidth+'px';
+				// 	oDiv.style.width=Gao+'px';
+				// }
+			}
+
+			var l1=oDiv.offsetLeft;
+			var t1=oDiv.offsetTop;
+			var r1=oDiv.offsetLeft+oDiv.offsetWidth;
+			var b1=oDiv.offsetTop+oDiv.offsetHeight;
+			var l2=oDiv2.offsetLeft;
+			var t2=oDiv2.offsetTop;
+			var r2=oDiv2.offsetLeft+oDiv.offsetWidth;
+			var b2=oDiv2.offsetTop+oDiv.offsetHeight;
+
+			
+			if(r1<l2||t1>b2||l1>r2||b1<t2){
+				oDiv2.style.background='#f00';
+			}else{
+				// var P=document.createElement('p');
+				// P.style.width=W+'px';
+				// P.style.height=H+'px';
+				// P.style.background='#f00';
+				// document.body.appendChild(P)
+
+				ist++
+				oFen.innerHTML=ist+'分';
+				//oDiv.style.width=CH+50+'px';
+				var W=dao(0,1310)
+				var H=dao(0,600)
+				oDiv2.style.left=W+'px';
+				oDiv2.style.top=H+'px';
+				console.log(i);
+
+			}
+
+			
+			
+
+		},ti);
+	}
+
+
+	var oX=document.getElementById('xuan');
+	var oC=document.getElementById('ceng');
+	var Di=oX.children;
+	var oUl=document.getElementById('ul');
+	var Li=oUl.children;
+
+	for(var i=0; i<Di.length; i++){
+		Di[i].index=i;
+		Di[i].onclick=function(){
+			//oDiv.style.left=oDiv.offsetLeft+10+'px';
+			for(var i=0; i<Di.length; i++){
+				Li[i].style.display='none';
+				Di[i].style.background='';
+			}
+			Li[this.index].style.display='block';
+			this.style.background='#f00';
+		}
+
+	}
+	var ti=0;
+	for(var i=0; i<Di.length; i++){
+		var Lis=Li[i].children[2];
+		Lis.onclick=function(){
+			var su=this.nextElementSibling||obj.nextSibling;
+			oC.style.display='none';
+			ti=su.innerHTML; 
+		}
+
+	}
+}
+
+	
+
+</script>
+</head>
+
+<body>
+<ul style="border:1px solid #f00; width:1360px; height:650px;">
+	<p id="fen" style="font-size:30px; width:100px; margin: 0 auto;">0分</p>
+	<p id="miao" style="color:#f00; font-size:30px; width:100px; margin: 10px auto;">0秒</p>
+	<div class="div1">
+	</div>
+	<div class="div2"></div>
+	<div class="ceng" id="ceng">
+		<span class="span">请选择等级<span>
+		<div id="xuan">
+			<input type="button" name="1000" value="手残级" />
+			<input type="button" name="500" value="普通级" />
+			<input type="button" name="30" value="正常级" />
+			<input type="button" name="15" value="挑战级" />
+			<input type="button" name="5" value="极限级" title="没有单身30年的手速不要想玩这个" />
+			<input type="button" name="1" value="超神级" title="你能坚持10秒我叫你哥" />
+		</div>
+		<ul id="ul">
+			<li style="display:block;">
+				<img src="" />
+				<p>次关须拥有极致耐心，能的一百分你就是一个合格的程序猿,<!--适合拥有乌龟手速的玩家，警告！手速超过乌龟者请勿选此级，否则一概后果本人概不负责--></p>
+				<input type="button" value="开始" />
+				<i>1000</i>
+			</li>
+			<li>
+				<img src="" />
+				<p>这是普通中的普通，慎选</p>
+				<input type="button" value="开始" />
+				<i>500</i>
+			</li>
+			<li>
+				<img src="" />
+				<p>正常人都不玩这个等级</p>
+				<input type="button" value="开始" />
+				<i>30</i>
+			</li>
+			<li>
+				<img src="" />
+				<p>自我感觉手速还过得去的玩家可以试试</p>
+				<input type="button" value="开始" />
+				<i>10</i>
+			</li>
+			<li>
+				<img src="" />
+				<p>没有单身30年的手速就不要幻想了</p>
+				<input type="button" value="开始" />
+				<i>5</i>
+			</li>
+			<li>
+				<img src="" />
+				<p>你能坚持10秒就已经可以超神的，愿……保佑你，阿门哥</p>
+				<input type="button" value="开始" />
+				<i>1</i>
+			</li>
+		</ul>	
+	</div>
+</ul>	
+</body>
+</html>

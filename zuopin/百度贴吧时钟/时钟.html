@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+ul{ width:250px; margin:100px auto; }
+li {float:left; width:24px; height:35px; overflow:hidden; position:relative; line-height:35px; text-align:center; font-size:25px;}
+li img {position:absolute; left:0; top:0px;}
+</style>
+<script src="move.js"></script>
+<script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
+window.onload=function (){
+	var oUl=document.getElementById('ul');
+	var aImg=oUl.getElementsByTagName('img');
+	
+	function tick(){
+		var oDate=new Date();
+		var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+		for(var i=0; i<aImg.length; i++){
+			//aImg[i].style.top=-str.charAt(i)*35+'px';
+			startMove(aImg[i],{top:-str.charAt(i)*35},500,'ease-in');
+		}
+	}
+	tick();
+	setInterval(tick,1000);
+};
+</script>
+</head>
+
+<body>
+<ul id="ul">
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+    <li>:</li>
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+    <li>:</li>
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+</ul>
+</body>
+</html>

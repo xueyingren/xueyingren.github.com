@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>幻灯片</title>
+<style>
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a{ color:#000; text-decoration:none;}
+ul{
+	width: 570px;
+	margin: 0 auto;
+}
+li{
+	width: 100px;
+	height: 30px;
+	float: left;
+	border: 1px solid #000;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+.li1{
+	
+	background: #000;
+}
+.li1 a{
+	color: #fff;
+}
+#box{ width:700px; height:400px; background:url(img/0.jpg) no-repeat; margin:50px auto; position:relative; }
+#box span{ position:absolute; left:0; top:0; background:url(img/1.jpg) no-repeat; opacity:0; }
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var oBtn=document.getElementById('btn');
+	
+	var R=1;
+	var C=40;
+	
+	for(var r=0; r<R; r++){
+		for(var c=0; c<C; c++){
+			var oS=document.createElement('span');
+			oS.style.width=oBox.offsetWidth/C+'px';
+			oS.style.height=oBox.offsetHeight/R+'px';
+			oBox.appendChild(oS);
+			
+			oS.style.left=oS.offsetWidth*c+'px';
+			oS.style.top=oS.offsetHeight*r+'px';
+			
+			oS.style.backgroundPosition='-'+oS.offsetWidth*c+'px -'+oS.offsetHeight*r+'px';
+		}
+	}
+	
+	var timer=null;
+	var iNow=0;
+	//oBtn.onclick=function (){
+	setInterval(function(){
+		var aS=oBox.children;
+		
+		iNow++;
+		if(iNow%3==0){
+			oBox.style.backgroundImage='url(img/2.jpg)';
+		}else{
+			oBox.style.backgroundImage='url(img/'+(iNow%3-1)+'.jpg)';
+		}
+		for(var i=0; i<aS.length; i++){
+			(function (index){
+				setTimeout(function (){
+					aS[index].style.backgroundImage='url(img/'+iNow%3+'.jpg)';
+					aS[index].style.opacity=0;
+					aS[index].style.filter='alpha(opacity:0)';
+					startMove(aS[index],{opacity:1});
+				},100*index);
+			})(i);
+		}
+		
+	},4500)
+	//};
+};
+</script>
+</head>
+
+<body>
+	<div id="box">
+    </div>
+    <ul>
+    	<li >
+    		<a href="fen1.html">
+    			淡入淡出
+    		</a>
+        </li>
+    	<li>
+    		<a href="fen2.html">
+    			栅格随机
+    		</a>
+        </li>
+        <li  class="li1">
+    		<a href="javascript:;">
+    			栅格左到右
+    		</a>
+        </li>
+        <li>
+    		<a href="fen4.html">
+    			栅格倾斜
+    		</a>
+        </li>
+        <li>
+    		<a href="fen5.html">
+    			翻转
+    		</a>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

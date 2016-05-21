@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+<style>
+*{
+	margin:0; 
+	padding:0; 
+	list-style:none; 
+	text-decoration:none;
+}
+li{ 
+	height:30px; 
+	line-height:30px; 
+	border-bottom:1px dashed #ccc; 
+	overflow:hidden; 
+	position:relative;
+}
+li a{ 
+	position:absolute; 
+	left:0; top:0; 
+	height:30px;
+}
+li span{ 
+	position:absolute; 
+	right:-80px; top:0; 
+	height:30px; 
+	width:80px; 
+	text-align:center; 
+	background:red; 
+	color:#fff;
+}
+</style>
+<script src="zepto.js"></script>
+<script>
+$(document).ready(function(){
+	$('li').swipeLeft(function(){
+		$('li span').animate({right:-80},{duration:300});
+		$(this).find('span').animate({right:0},{duration:300});
+	});
+	$('li').swipeRight(function(){
+		$(this).find('span').animate({right:-80},{duration:300});
+	});
+	$(document).click(function(){
+		$('li span').animate({right:-80},{duration:300});
+	});
+	
+	$('li span').click(function(){
+		$(this).parent('li').animate({height:0},{duration:200,complete:function(){
+			$(this).remove();
+		}});
+	});
+});
+</script>
+
+</head>
+<body>
+<ul>
+	<li><a href="javascript:;">智能社</a><span>删除</span></li>
+	<li><a href="javascript:;">百度</a><span>删除</span></li>
+	<li><a href="javascript:;">淘宝</a><span>删除</span></li>
+	<li><a href="javascript:;">新浪</a><span>删除</span></li>
+	<li><a href="javascript:;">网易</a><span>删除</span></li>
+	<li><a href="javascript:;">迅雷</a><span>删除</span></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css3 时钟</title>
+<style>
+*{margin:0; padding:0;}
+.clock{width:300px; height:300px; border:5px solid #000; border-radius:50%; position:absolute; left:50%; top:50%; margin-left:-150px; margin-top:-150px;}
+.hou{width:12px; height:80px;background:#000; position:absolute; left:50%; margin-left:-6px; top:70px; border-radius: 50% 50% 0 0; 
+	-webkit-transform-origin: center 80px;
+	-moz-transform-origin: center 80px;
+	-ms-transform-origin: center 80px;
+	transform-origin: center 80px;
+}
+.min{width:8px; height:100px; background:#000; border-radius:50% 50% 0 0; position:absolute;  left:50%; top:50px; margin-left:-4px; 
+	-webkit-transform-origin:center 100px;
+	-moz-transform-origin:center 100px;
+	-ms-transform-origin:center 100px;
+	transform-origin:center 100px;
+}
+.sec{width:4px; height:120px; background:red; position:absolute; left:50%; margin-left:-2px; top:30px; border-radius:50% 50% 0 0; 
+	-webkit-transform-origin:center 120px;
+	-moz-transform-origin:center 120px;
+	-ms-transform-origin:center 120px;
+	transform-origin:center 120px;
+}
+.clock span{width:4px; height:10px; background:#000; position:absolute; left:50%; margin-left:-2px; 
+	-webkit-transform-origin:center 150px;
+	-moz-transform-origin:center 150px;
+	-ms-transform-origin:center 150px;
+	transform-origin:center 150px;
+}
+.clock span.big_scale{width:6px; height:15px; margin-left:-3px;}
+.clock span em{position:absolute; left:50%; top:18px; font-style:normal; width:30px;margin-left:-15px; text-align:center;}
+.clock .cap{width:20px;height:20px; background:#000; border-radius:50%; position:absolute; left:50%; top:50%; margin-left:-10px; margin-top:-10px;}
+</style>
+<script>
+window.onload=function(){
+	var oClock = document.querySelector('.clock');
+	var oHou = document.querySelector('.hou');
+	var oMin = document.querySelector('.min');
+	var oSec = document.querySelector('.sec');
+	
+	for(var i=0;i<60;i++){
+		
+		var oS = document.createElement('span');
+		oS.style.WebkitTransform='rotate('+i*6+'deg)';
+		oS.style.MozTransform='rotate('+i*6+'deg)';
+		oS.style.MsTransform='rotate('+i*6+'deg)';
+		oS.style.transform='rotate('+i*6+'deg)';
+		if(i%5==0){
+			oS.innerHTML = '<em>'+(i/5||12)+'<\/em>';
+			var oEm = oS.children[0];
+			oEm.style.WebkitTransform='rotate('+-i*6+'deg)';
+			oEm.style.MozTransform='rotate('+-i*6+'deg)';
+			oEm.style.MsTransform='rotate('+-i*6+'deg)';
+			oEm.style.transform='rotate('+-i*6+'deg)';
+			oS.className='big_scale';
+		}
+		oClock.appendChild(oS);
+	}
+	
+	function tick(){
+		var oDate = new Date();
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var ms = oDate.getMilliseconds();
+		oHou.style.WebkitTransform='rotate('+(h*30+m/60*30)+'deg)';
+		oMin.style.WebkitTransform='rotate('+(m*6+s/60*6)+'deg)';
+		oSec.style.WebkitTransform='rotate('+(s*6+ms/1000*6)+'deg)';
+
+		oHou.style.MozTransform='rotate('+(h*30+m/60*30)+'deg)';
+		oMin.style.MozTransform='rotate('+(m*6+s/60*6)+'deg)';
+		oSec.style.MozTransform='rotate('+(s*6+ms/1000*6)+'deg)';
+
+		oHou.style.MsTransform='rotate('+(h*30+m/60*30)+'deg)';
+		oMin.style.MsTransform='rotate('+(m*6+s/60*6)+'deg)';
+		oSec.style.MsTransform='rotate('+(s*6+ms/1000*6)+'deg)';
+
+		oHou.style.transform='rotate('+(h*30+m/60*30)+'deg)';
+		oMin.style.transform='rotate('+(m*6+s/60*6)+'deg)';
+		oSec.style.transform='rotate('+(s*6+ms/1000*6)+'deg)';
+	}
+	tick();
+	setInterval(tick,1);
+};
+</script>
+</head>
+
+<body>
+<div class="clock">
+	<div class="hou"></div>
+	<div class="min"></div>
+	<div class="sec"></div>
+	<div class="cap"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
