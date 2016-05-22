@@ -33,8 +33,16 @@
 .clock span.big_scale{width:6px; height:15px; margin-left:-3px;}
 .clock span em{position:absolute; left:50%; top:18px; font-style:normal; width:30px;margin-left:-15px; text-align:center;}
 .clock .cap{width:20px;height:20px; background:#000; border-radius:50%; position:absolute; left:50%; top:50%; margin-left:-10px; margin-top:-10px;}
+
+#ul{ width:192px; margin:100px auto; }
+li {float:left; width:24px; height:35px; overflow:hidden; position:relative; line-height:35px; text-align:center; font-size:25px;}
+li img {position:absolute; left:0; top:0px;}
 </style>
+<script src="move.js"></script>
 <script>
+function toDou(iNum){
+	return iNum<10?'0'+iNum:''+iNum;
+}
 window.onload=function(){
 	var oClock = document.querySelector('.clock');
 	var oHou = document.querySelector('.hou');
@@ -84,6 +92,21 @@ window.onload=function(){
 	}
 	tick();
 	setInterval(tick,1);
+
+	var oUl=document.getElementById('ul');
+	var aImg=oUl.getElementsByTagName('img');
+	
+	function tick1(){
+		var oDate=new Date();
+		var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+		for(var i=0; i<aImg.length; i++){
+			//aImg[i].style.top=-str.charAt(i)*35+'px';
+			startMove(aImg[i],{top:-str.charAt(i)*35},450,'ease-in');
+		}
+	}
+	tick1();
+	setInterval(tick1,1000);
+
 };
 </script>
 </head>
@@ -95,6 +118,16 @@ window.onload=function(){
 	<div class="sec"></div>
 	<div class="cap"></div>
 </div>
+<ul id="ul">
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+    <li>:</li>
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+    <li>:</li>
+	<li><img src="num.png" /></li>
+	<li><img src="num.png" /></li>
+</ul>
 </body>
 </html>
 

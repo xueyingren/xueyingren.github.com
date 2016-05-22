@@ -83,6 +83,7 @@ window.onload=function(){
 			oBox.style.transform='perspective(800px) rotateY(90deg) rotateX(0deg)';
 		},1000);
 		setTimeout(function(){
+			oBoC[2].children[0].style.opacity = 0;
 			oShC[2].style.opacity = 1;
 			oShC[2].style.zIndex = 100;
 			oShC[2].style.WebkitTransform = 'scale(6,3) translate(1px,68px)';
@@ -104,6 +105,7 @@ window.onload=function(){
 			oBox.style.transform='perspective(800px) rotateY(-90deg) rotateX(0deg)';
 		},1000);
 		setTimeout(function(){
+			oBoC[3].children[0].style.opacity = 0;
 			oShC[3].style.opacity = 1;
 			oShC[3].style.zIndex = 100;
 			oShC[3].style.WebkitTransform = 'scale(6,3) translate(1px,68px)';
@@ -125,6 +127,7 @@ window.onload=function(){
 			oBox.style.transform='perspective(800px) rotateY(0deg) rotateX(-90deg)';
 		},1000);
 		setTimeout(function(){
+			oBoC[4].children[0].style.opacity = 0;
 			oShC[4].style.opacity = 1;
 			oShC[4].style.zIndex = 100;
 			oShC[4].style.WebkitTransform = 'scale(6,3) translate(1px,68px)';
@@ -146,6 +149,7 @@ window.onload=function(){
 			oBox.style.transform='perspective(800px) rotateY(0deg) rotateX(90deg)';
 		},1000);
 		setTimeout(function(){
+			oBoC[5].children[0].style.opacity = 0;
 			oShC[5].style.opacity = 1;
 			oShC[5].style.zIndex = 100;
 			oShC[5].style.WebkitTransform = 'scale(6,3) translate(1px,68px)';
@@ -222,15 +226,97 @@ window.onload=function(){
 	    oAs[i].onmouseover=function(){
 	    	var oS = this.children[0];
 	    	console.log(oS);
-	    	move(oS,{bottom:0})
+	    	startMove(oS,{bottom:0})
 	    }
 	    oAs[i].onmouseout=function(){
 	    	var oS = this.children[0];
-	    	move(oS,{bottom:-oS.offsetHeight})
+	    	startMove(oS,{bottom:-oS.offsetHeight})
 	    }
 	}
 
+//我的技能
+	var oWarks=document.getElementById('works');
+	var aLia = oWarks.getElementsByTagName('li');
+	var oWa=document.getElementById('wok');
+	var aLiw = oWa.getElementsByTagName('li');
+	for(var i=0;i<aLia.length;i++){
+		aLia[i].index=i;
+		through(aLia[i],aLiw[aLia[i].index],aLiw);
+	}	
+
 
 }
+
+
+// 穿墙
+
+	function hoverDir(obj,ev){
+		var w=obj.offsetWidth;
+		var h=obj.offsetHeight;
+		var x=obj.offsetLeft+w/2-ev.clientX;
+		var y=obj.offsetTop+h/2-ev.clientY;
+		return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+
+	}
+	function through(obj,ix,ia){
+		var oS = obj.children[0];
+		
+		obj.onmouseover=function(ev){
+			
+			for(var i=0;i<ia.length;i++){
+					ia[i].className='';
+			}
+			ix.className='explain_li';
+			var oEvent = ev||event;
+			var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+			if(obj.contains(oFrom))return;
+			var n = hoverDir(obj,oEvent);
+			switch(n){
+				case 0:
+					oS.style.left='150px';
+					oS.style.top=0;
+					//alert(1);
+				break;
+				case 1:
+					oS.style.left=0;
+					oS.style.top='150px';
+					//alert(2);
+				break;
+				case 2:
+					oS.style.left='-150px';
+					oS.style.top=0;
+					//alert(3);
+				break;
+				case 3:
+					oS.style.left=0;
+					oS.style.top='-150px';
+					//alert(4);
+				break;
+			}
+			startMove(oS,{top:0,left:0});
+		};
+		obj.onmouseout=function(ev){
+
+			var oEvent = ev||event;
+			var oTo = oEvent.toElement||oEvent.relatedTarget;
+			if(obj.contains(oTo))return;
+			var n = hoverDir(obj,oEvent);
+			switch(n){
+				case 0:
+					startMove(oS,{top:0,left:150});
+				break;
+				case 1:
+					startMove(oS,{top:150,left:0});
+				break;
+				case 2:
+					startMove(oS,{top:0,left:-150});
+				break;
+				case 3:
+					startMove(oS,{top:-150,left:0});
+				break;
+			}
+		};
+	}
+		
 
 

@@ -4,9 +4,47 @@
 <meta charset="utf-8">
 <title>爆炸效果</title>
 <style>
-*{margin:0; padding:0;}
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a{ color:#000; text-decoration:none;}
+ul{
+	width: 385px;
+	margin: 0 auto;
+}
+li{
+	width: 100px;
+	height: 30px;
+	float: left;
+	border: 1px solid #000;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 10px;
+	margin-left: 10px;
+}
+.li1{
+	
+	background: #000;
+}
+.li1 a{
+	color: #fff;
+}
 html,body{height:100%;overflow:hidden;}
-.box{width:700px; height:400px; background:url(img/2.jpg) no-repeat; margin:100px auto; position:relative; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px);}
+.box{width:700px; height:400px; background:url(img/2.jpg) no-repeat; margin:100px auto; position:relative; 
+	-webkit-transform-style:preserve-3d; 
+	-webkit-transform:perspective(800px);
+
+	-moz-transform-style:preserve-3d; 
+	-moz-transform:perspective(800px);
+
+	-ms-transform-style:preserve-3d; 
+	-ms-transform:perspective(800px);
+
+	transform-style:preserve-3d; 
+	transform:perspective(800px);
+}
 .box span{position:absolute; top:0; left:0; background:url(img/1.jpg) no-repeat;}
 </style>
 <script>
@@ -43,6 +81,15 @@ window.onload=function(){
 			var y = (aS[i].offsetTop+aS[i].offsetHeight/2)-oBox.offsetHeight/2;
 			aS[i].style.WebkitTransition = '.8s all ease';
 			aS[i].style.WebkitTransform='translate('+x+'px,'+y+'px) rotateX('+rnd(-360,360)+'deg)  rotateY('+rnd(-360,360)+'deg)';
+
+			aS[i].style.MozTransition = '.8s all ease';
+			aS[i].style.MozTransform='translate('+x+'px,'+y+'px) rotateX('+rnd(-360,360)+'deg)  rotateY('+rnd(-360,360)+'deg)';
+
+			aS[i].style.MsTransition = '.8s all ease';
+			aS[i].style.MsTransform='translate('+x+'px,'+y+'px) rotateX('+rnd(-360,360)+'deg)  rotateY('+rnd(-360,360)+'deg)';
+
+			aS[i].style.transition = '.8s all ease';
+			aS[i].style.transform='translate('+x+'px,'+y+'px) rotateX('+rnd(-360,360)+'deg)  rotateY('+rnd(-360,360)+'deg)';
 			aS[i].style.opacity = 0;
 		}
 		function fnEnd(){
@@ -50,6 +97,15 @@ window.onload=function(){
 			for(var i=0;i<aS.length;i++){
 				aS[i].style.WebkitTransition = 'none';
 				aS[i].style.WebkitTransform='translate(0,0) rotateX(0deg)  rotateY(0deg)';
+
+				aS[i].style.MozTransition = 'none';
+				aS[i].style.MozTransform='translate(0,0) rotateX(0deg)  rotateY(0deg)';
+
+				aS[i].style.MsTransition = 'none';
+				aS[i].style.MsTransform='translate(0,0) rotateX(0deg)  rotateY(0deg)';
+
+				aS[i].style.transition = 'none';
+				aS[i].style.transform='translate(0,0) rotateX(0deg)  rotateY(0deg)';
 				aS[i].style.opacity = 1;
 				aS[i].style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
 			}
@@ -66,6 +122,23 @@ window.onload=function(){
 <div class="box">
 	
 </div>
+<ul>
+    	<li>
+    		<a href="3D1.html">
+    			3D翻转
+    		</a>
+        </li>
+    	<li>
+    		<a href="3D2.html">
+    			翻书
+    		</a>
+        </li>
+        <li class="li1"> 
+    		<a href="javascript:;">
+    			爆炸
+    		</a>
+        </li>
+    </ul>
 </body>
 </html>
 

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+*{
+	margin:0; 
+	padding:0;
+}
+html,body{
+	height:100%; 
+	overflow:hidden;
+}
+canvas{
+	background:#000;
+}
+.div{
+	position: absolute;
+	left: 0px; top: 0px;
+	color: #f00;
+}
+</style>
+
+<script>
+function rnd(n,m){
+	return Math.floor(Math.random()*(m-n)+n);
+}
+window.onload=function(){
+	var N = 5;
+	var LEN = 10;
+  	var oPrev = document.querySelector ('.div');
+  	var aLi1 = oPrev.querySelectorAll('input')[0];
+  	var aLi2 = oPrev.querySelectorAll('input')[1];
+  	var aLi3 = oPrev.querySelectorAll('input')[2];
+  	
+  	aLi3.onclick=function(){
+  			
+  			N=aLi1.value;
+  			LEN=aLi2.value;
+  			for(var i=0;i<N;i++){
+			aPoint.push({
+				x:rnd(0,oC.width),
+				y:rnd(0,oC.height),
+				speedX:rnd(-10,10),
+				speedY:rnd(-10,10)
+			});
+		}
+  	}
+
+	var oC = document.getElementById('c1');
+	oC.width = document.documentElement.clientWidth;
+	oC.height = document.documentElement.clientHeight;
+	var gd = oC.getContext('2d');
+	var aPoint = [];
+	var aOldPath = [];
+
+	for(var i=0;i<N;i++){
+		aPoint.push({
+			x:rnd(0,oC.width),
+			y:rnd(0,oC.height),
+			speedX:rnd(-10,10),
+			speedY:rnd(-10,10)
+		});
+	}
+	setInterval(function(){
+		gd.clearRect(0,0,oC.width,oC.height);
+		for(var i=0;i<aPoint.length;i++){
+			dragPoint(aPoint[i]);
+		}
+		for(var i=0;i<aPoint.length;i++){
+			if(aPoint[i].x<0){
+				aPoint[i].x = 0;
+				aPoint[i].speedX*=-1;
+			}
+			if(aPoint[i].y<0){
+				aPoint[i].y = 0;
+				aPoint[i].speedY*=-1;
+			}
+			if(aPoint[i].x>oC.width){
+				aPoint[i].x = oC.width;
+				aPoint[i].speedX*=-1;
+			}
+			if(aPoint[i].y>oC.height){
+				aPoint[i].y = oC.height;
+				aPoint[i].speedY*=-1;
+			}
+			aPoint[i].x+=aPoint[i].speedX;
+			aPoint[i].y+=aPoint[i].speedY;
+		}
+		gd.beginPath();
+		gd.strokeStyle = '#fff';
+		gd.moveTo(aPoint[0].x,aPoint[0].y);
+		for(var i=1;i<aPoint.length;i++){
+			gd.lineTo(aPoint[i].x,aPoint[i].y);
+		}
+		gd.closePath();
+		gd.stroke();
+		var arr = [];
+		for(var i=0;i<aPoint.length;i++){
+			arr.push({
+				x:aPoint[i].x,
+				y:aPoint[i].y,
+				speedX:aPoint[i].speedX,
+				speedY:aPoint[i].speedY
+			});
+		}
+		aOldPath.push(arr);
+		if(aOldPath.length>LEN){
+			aOldPath.shift();
+		}
+		for(var i=0;i<aOldPath.length;i++){
+			gd.beginPath();
+			gd.fillStyle = '#fff';
+			gd.moveTo(aOldPath[i][0].x,aOldPath[i][0].y);
+			for(var j=1;j<aOldPath[i].length;j++){
+				gd.lineTo(aOldPath[i][j].x,aOldPath[i][j].y);
+			}
+			gd.closePath();
+			gd.stroke();
+		}
+	},16);
+	function dragPoint(oPoint){
+		gd.beginPath();
+		gd.fillStyle = '#fff';
+		gd.fillRect(oPoint.x,oPoint.y,0,0);
+	}
+};
+</script>
+
+</head>
+<body>
+<canvas id="c1"></canvas>
+<div class="div">
+	循环点<input type="text" />
+	循环次数<input type="text" />
+	<input type="button" value="确定" />
+</div>	
+</body>
+</html>

@@ -5,6 +5,7 @@
   <title>Document</title>
 <link href="stylesheets/base.css" rel="stylesheet" />
 <link rel="stylesheet" href="stylesheets/style-index.css" />  
+
 <script src="javascripts/3D.js"></script>
 <script src="javascripts/move.js"></script>
 <script src="javascripts/move1.js"></script>
@@ -20,7 +21,9 @@
     <li class="r">我的技能</li>
     <li class="s">经历</li>
     <li class="x">留言</li>
-    <li id="block"></li>
+    <li id="block">
+      
+    </li>
   </ul>
   <!-- 首页 -->
   <div>
@@ -67,13 +70,22 @@
 
    <!-- 3D -->
    <div id="sho">
-      <div class="shouyq">
-         
+      <div class="shouyq" style="opacity: 1; z-index: 100; transform: scale(6, 3) translate(1px, 68px);">
+         <div class="gr bjt1" >
+            <div class="tx">  
+              <img src="images/touxiang.jpg" class="" />
+            </div>  
+            <div class="mingy">一次挑战就是向自己和他人证明你能力的一次机会</div>
+            <strong class="xian"></strong>
+            <div class="mingy">赵阳</div>
+            <div class="mingy">25岁</div>
+            <div class="mingy">yingwei1hao@sina.com</div>
+          </div>
       </div>
       <div class="shouyh">
          <!-- 个人信息 -->
-         <div class="gr clearfix " style="">
-            <ul class="resume_ul fl">
+         <div class="gr clearfix bjt " style="">
+            <ul class="resume_ul fr">
                   <li><span>姓名：</span><i>赵阳</i></li>
                   <li><span>出生年月：</span><i>1991.11.30</i></li>
                   <li><span>籍贯:</span><i>山东省济南市济阳县</i></li>
@@ -84,26 +96,12 @@
                   <li><span>培训机构：</span><i>智能社</i></li>
                   <li><span>目前状况:</span><i>离职</i></li>
                </ul>
-               <ul class="resume_ul_l fl">
+               <!-- <ul class="resume_ul_l fl">
                   <h3>自我评价</h3>
                   <ol class="ping">
-                     <li>
-                        1.熟悉CSS及Web设计标准，能使用DIV+CSS的方式设计页面，能够解决浏览器兼容问题；能完全手写代码并合理布局；
-                     </li>
-                     <li>
-                        1.熟悉CSS及Web设计标准，能使用DIV+CSS的方式设计页面，能够解决浏览器兼容问题；能完全手写代码并合理布局；
-                     </li>
-                     <li>
-                        1.熟悉CSS及Web设计标准，能使用DIV+CSS的方式设计页面，能够解决浏览器兼容问题；能完全手写代码并合理布局；
-                     </li>
-                     <li>
-                        1.熟悉CSS及Web设计标准，能使用DIV+CSS的方式设计页面，能够解决浏览器兼容问题；能完全手写代码并合理布局；
-                     </li>
-                     <li>
-                        1.熟悉CSS及Web设计标准，能使用DIV+CSS的方式设计页面，能够解决浏览器兼容问题；能完全手写代码并合理布局；
-                     </li>
+                     2014年毕业于烟台南山学院，
                   </ol>
-               </ul>
+               </ul> -->
          </div>
       </div>
       <div class="shouyz">
@@ -244,17 +242,17 @@
                   </a>
                 </li>
                 <li class="l2">
-                  <a href="javascript:;">
-                    <span>展示一</span>
-                    <img src="images/8.jpg" />
+                  <a href="zuopin/h5/canvas-yidong.html">
+                    <span>canvas</span>
+                    <img src="images/canvas.png" />
                   </a>
-                  <a href="javascript:;">
-                    <span>展示一</span>
-                    <img src="images/8.jpg" />
+                  <a href="zuopin/h5/bao.html">
+                    <span>屏保</span>
+                    <img src="images/bao.png" />
                   </a>
-                  <a href="javascript:;">
-                    <span>展示一</span>
-                    <img src="images/8.jpg" />
+                  <a href="zuopin/h5/3D-tu.html">
+                    <span>3D图片环</span>
+                    <img src="images/3dhuan.png" />
                   </a>
                   <a href="javascript:;">
                     <span>展示一</span>
@@ -270,21 +268,67 @@
                     <span>自定义视频播放器</span>
                     <img src="images/zdy.png" />
                   </a>
-                  <a href="javascript:;">
-                    <span>展示一</span>
-                    <img src="images/9.jpg" />
+                  <a href="zuopin/xiaoyouxi/2.html">
+                    <span>超简易版小游戏</span>
+                    <img src="images/tan.png" />
                   </a>
-                  <a href="javascript:;">
-                    <span>展示一</span>
-                    <img src="images/9.jpg" />
+                  <a href="zuopin/xuanxiangka/3D1.html">
+                    <span>3D幻灯片</span>
+                    <img src="images/huan2.png" />
                   </a>
                 </li>
               </ul>
             </div>  
           </div> 
       </div>
-      <div class="shouyr">
-
+      <div class="shouyr" >
+          <div class="gr clearfix bjt1 " style="">
+              <p class="zyjn">专业技能</p>
+              <ul class="zye clearfix" id="works">
+                <li>
+                  <span class="zye_span">css+HTML</span>
+                  <img src="images/css.png" />
+                </li>
+                <li>
+                  <span class="zye_span">Javascript</span>
+                  <img src="images/js.png" />
+                </li>
+                <li>
+                  <span class="zye_span">AJAX</span>
+                  <img src="images/ajax.png" />
+                </li>
+                 <li>
+                  <span class="zye_span">jsonp</span>
+                  <img src="images/jsonp.jpg" />
+                </li>
+                <li>
+                  <span class="zye_span"> angularjs</span>
+                  <img src="images/anguar.png" />
+                </li>
+              </ul>
+              <ul class="explain" id="wok" >
+                <li class="explain_li">
+                  DIV+CSS是WEB设计标准，它是一种网页的布局方法。与传统中通过表格（table）布局定位的方式不同，它可以实现网页页面内容与表现相分离。提起DIV+CSS组合，还要从XHTML说起。XHTML是一种在HTML（标准通用标记语言的子集）基础上优化和改进的新语言，目的是基于XML应用与强大的数据转换能力，适应未来网络应用更多的需求。
+                </li>
+                
+                <li>
+                  JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
+                </li>
+                <li>
+                  AJAX即“Asynchronous Javascript AndXML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。</br>
+                  AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。</br>
+                  AJAX 是一种用于创建快速动态网页的技术。</br>
+                  通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</br>
+                  传统的网页（不使用 AJAX）如果需要更新内容，必须重载整个网页页面。
+                </li>
+                <li>
+                  JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器沟通，而 HTML 的script 元素是一个例外。利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。
+                </li>
+                <li>
+                 AngularJS  诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVVM、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。
+                </li>
+              </ul>
+          </div>
       </div>
       <div class="shouys">
          
@@ -295,16 +339,16 @@
    </div>   
    <div class="box">
       <div class="front box_f">
-         <img src="images/123.PNG" class="sy_img" />
+         <img src="images/234.png" class="sy_img" />
       </div>
       <div class="back box_f">
-         <img src="images/123.PNG" class="sy_img" />
+         <img src="images/123.png" class="sy_img" />
       </div>
       <div class="left box_f">
-         <img src="images/1.jpg" class="sy_img" />
+         <img src="images/zp.png" class="sy_img" />
       </div>
       <div class="right box_f">
-         <img src="images/1.jpg" class="sy_img" />
+         <img src="images/zy.png" class="sy_img" />
       </div>
       <div class="top box_f">
          <img src="images/1.jpg" class="sy_img" />
