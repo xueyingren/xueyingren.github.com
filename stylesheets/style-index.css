@@ -389,8 +389,93 @@ h3{
 	height: 600px;
 	position: absolute;
 	left: 0px;
+	border: 5px solid #000;
+}
+.sfq a{
+	position: relative;
+
 }
 .sfq li{
 	position: absolute;
 	left: 0px; top: 0px;
+
+}
+.jingl{
+	width: 1100px;
+	height: 3px;
+	background: #333;
+	border-radius: 2px;
+	position: absolute; left: 50px; top: 400px;
+}
+.jingl_ul li{
+	width: 40px;
+	height: 40px;
+	background:-webkit-radial-gradient(#fff,#000);
+	background:-moz-radial-gradient(#fff,#000);
+	background:-ms-radial-gradient(#fff,#000);
+	background:radial-gradient(#fff,#000);
+	border-radius: 20px;
+}
+.jingl_ul .hong{
+	background:-webkit-radial-gradient(#f00,#fff);
+	background:-moz-radial-gradient(#f00,#fff);
+	background:-ms-radial-gradient(#f00,#fff);
+	background:radial-gradient(#f00,#fff);
+	position: absolute; left: 200px; top: 380px;
+}
+.jingl_p{
+	position: absolute; left: 200px; top: 380px;
+}
+.jingl_p span{
+	position: absolute; bottom: -60px; left: -30px;
+	width: 100px;
+	text-align: center;
+	font-size: 20px;
+	color: #000;
+	font-family: 微软雅黑;
+}
+.gradua{
+	width: 1200px;
+	position: absolute; top: 50px;
+	height: 270px;
+	
+	/*border: 1px solid #000;*/
+}
+.gradua_ul{
+	width: 10000px;
+	position: absolute;
+	
+}
+.gradua li{
+	width: 600px;
+	background: #aaa;
+	margin-left: 300px;
+	float: left;
+	height: 270px;
+	position: relative;
+}
+
+.gradua .gradua_b{
+	display: block;
+}
+.gradua img{
+	width: 270px;
+	height: 270px;
+	position: absolute; right: 0px;
+}
+.gradua div{
+	font-size: 26px;
+	position: absolute;left: 20px; top: 25px;
+}
+.jingl_p1{
+	position: absolute; left: 370px; top: 380px;
+}
+.jingl_p2{
+	position: absolute; left: 540px; top: 380px;
+}
+.jingl_p3{
+	position: absolute; left: 710px; top: 380px;
+}
+.jingl_p4{
+	position: absolute; left: 880px; top: 380px;
 }

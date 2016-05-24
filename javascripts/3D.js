@@ -180,6 +180,24 @@ window.onload=function(){
 		// })(i);
 	}
 
+	//
+
+	var oJin = document.querySelector('.jingl_ul');
+	var oJli=oJin.getElementsByTagName('li');
+	var oHo = document.querySelector('.hong');
+	var oGr = document.querySelector('.gradua_ul');
+	for(var i=0;i<oJli.length-1;i++){
+		oJli[i].index=i;
+		oJli[i].onmouseover=function(){
+
+			// for(var i=0;i<oJli.length-1;i++){
+			// 	oGl[i].className='';
+			// }
+			move1(oHo,this.index*170+200);
+			startMove(oGr,{left:this.index*-900});
+			//oGl[this.index].className='gradua_b';
+		};
+	}
 
   //var oUl = document.querySelectorAll('.ul1');
   //3D菜单
