@@ -1,0 +1,3797 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>无标题文档</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/Bothsides.css" />
+	<link rel="stylesheet" href="css/bottom.css" />
+	<link rel="stylesheet" href="css/top_sy.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="css/jquery-1.11.3.js"></script>
+	<script src="css/jquery.nav.js"></script>
+	<script language="JavaScript" type="text/javascript" src="css/zhuye.js"></script>
+	<link rel="stylesheet" href="css/Application.css">
+	<script type="text/javascript" src="css/jquery.simple-dtpicker.js"></script>
+	<link type="text/css" href="css/jquery.simple-dtpicker.css" rel="stylesheet" />
+	<!--[if IE]>
+<style>
+	.nav_top_pty{
+		margin-right:55px;}
+	.header_div_ul10_div{
+		height:200px;}
+    .Sidebar:hover .Sidebar_p{
+		background:#08ac29;
+		margin-left:-62px;}
+    .Sidebar:hover .Sidebar_p1{
+	margin-left:-300px;
+	}
+</style>
+<![endif]-->
+
+
+</head>
+
+<body>
+
+	<div id="top-background">
+		<img src="img/backgroundz.gif">
+	</div>
+
+	<!--领取养老金-->
+	<div class="Receive" id="Hides" style="display:none;"></div>
+	<div class="Receiv" id="Hide" style="display:none;">
+		<i class="Receiv_i" id="Close"></i>
+		<img src="img/Noname1.png" id="yincang" />
+		<img src="img/Noname6.gif" id="shuqian" style="display:none;" class="shuqian" />
+		<div class="Receiv_div">
+			<span id="mes" style="display:none;">9</span>
+			<img src="img/Noname5.gif" id="divs" style="display:block;" />
+			<p id="bian">
+				<img src="img/Noname3.png" id="img" style="display:none;" class="Receiv_div_img" />
+			</p>
+		</div>
+	</div>
+
+	<!--两侧-->
+	<div class="Sidebar_right">
+		<a class="Sidebar">
+			<i class="Sidebar_i"></i>
+			<p class="Sidebar_p">个人中心</p>
+		</a>
+		<a class="Sidebar">
+			<i class="Sidebar_i1"></i>
+			<p class="Sidebar_p">购物车</p>
+		</a>
+		<a class="Sidebar">
+			<i class="Sidebar_i2"></i>
+			<p class="Sidebar_p">收藏</p>
+		</a>
+		<a class="Sidebar">
+			<i class="Sidebar_i3"></i>
+			<p class="Sidebar_p">足迹</p>
+		</a>
+	</div>
+	<div class="Sidebar_right1">
+		<a class="Sidebar" id="zhiding">
+			<i class="Sidebar_i4"></i>
+			<p class="Sidebar_p">置顶</p>
+		</a>
+		<a class="Sidebar">
+			<i class="Sidebar_i5"></i>
+			<p class="Sidebar_p">咨询</p>
+		</a>
+		<a class="Sidebar">
+			<i class="Sidebar_i6"></i>
+			<p class="Sidebar_p1" onclick="join();">
+				<img src="img/Noname.gif" id="Display" />
+			</p>
+		</a>
+	</div>
+
+
+	<!-- 左侧 -->
+	<ul id="Sidebar_left">
+		<li>
+			<a href="#1f">1F</a>
+			<a href="#1f">日用百货</a>
+		</li>
+		<li>
+			<a href="#2f">2F</a>
+			<a href="#2f">安心厨房</a>
+		</li>
+		<li>
+			<a href="#3f">3F</a>
+			<a href="#3f">生鲜果蔬</a>
+		</li>
+		<li>
+			<a href="#4f">4F</a>
+			<a href="#4f">酒水百货</a>
+		</li>
+		<li>
+			<a href="#5f">5F</a>
+			<a href="#5f">粮油食品</a>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		var sidebar = $('#Sidebar_left');
+		sidebar.onePageNav();
+
+		$(window).scroll(function() {
+			var top = $('#1f').offset().top;
+			var scrollTop = $(document).scrollTop();
+			var winH = $(window).height() / 2;
+
+			if ((scrollTop + winH - top) > 0) { //当元素居于窗口中间时
+				sidebar.css('display', 'block');
+			} else {
+				sidebar.css('display', 'none');
+			}
+		});
+
+		$(window).resize(function() {
+			var left = (document.body.clientWidth - 1200) / 2 - 80;
+			sidebar.css('left', left);
+		});
+	</script>
+
+
+	<!--顶部-->
+	<div class="top_background">
+		<div class="top_center clearfix">
+			<div class="fl clearfix">
+				<a href="#" class="fl top_hy">欢迎，请登录</a>
+				<a href="注册.html" class="fl top_zc">注册</a>
+				<div class="fl clearfix class">
+					<p class="top_cs fl">城市：</p>
+					<p class="top_bj fl">北京</p>
+					<p class="top_qh fl">[切换城市]</p>
+					<ul class="header_yc">
+						<li class="header_yc_li">北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<li>河北</li>
+						<li>山西</li>
+						<li>河南</li>
+						<li>辽宁</li>
+						<li>吉林</li>
+						<li>黑龙江</li>
+						<li>内蒙古</li>
+						<li>江苏</li>
+						<li>山东</li>
+						<li>安徽</li>
+						<li>浙江</li>
+						<li>福建</li>
+						<li>湖北</li>
+						<li>湖南</li>
+						<li>广东</li>
+						<li>广西</li>
+						<li>江西</li>
+						<li>四川</li>
+						<li>海南</li>
+						<li>贵州</li>
+						<li>云南</li>
+						<li>北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<li>河北</li>
+						<li>北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<li>河北</li>
+						<li>河北</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="fr top_r">
+				<li class="top_r_li1">
+					<a href="#">我的订单</a>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1 top_r_li2">
+					<a href="#" class="top_wddd">我的呆呆</a>
+					<i class="top_i"></i>
+
+					<div class="wd wd-user">
+						<div class="user-info">
+							<a href="#">
+								<img src="img/Congregation.png">
+							</a>
+							<!-- 未登录下显示：您好，请登录 -->
+							<a href="#">xuyingjie</a>
+							<a class="news" href="#">消息<i>.</i></a>
+						</div>
+						<div class="user-link">
+							<div class="col">
+								<a href="#">购物车升级</a>
+								<a href="#">我的慈善</a>
+								<a href="#">我的理财</a>
+							</div>
+							<div class="col">
+								<a href="#">我的众筹</a>
+								<a href="#">我的金币</a>
+								<a href="#">我的养老账户</a>
+							</div>
+						</div>
+					</div>
+
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1">
+					<a href="#">卖家中心</a>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1 top_r_li2">
+					<a href="#" class="top_sjdd">手机呆呆</a>
+					<i class="top_i"></i>
+					<div class="Mobilephone">
+						<a href="#" class="Mobile">
+							<i class="Mobile_1"></i>
+							<i class="Mobile_2"></i>
+							<i class="Mobile_3"></i>
+							<i class="Mobile_4"></i>
+							<i class="Mobile_5"></i>
+							<i class="Mobile_6"></i>
+						</a>
+						<a href="#" class="Mobile">
+							<i class="Mobile_7"></i>
+							<i class="Mobile_8"></i>
+							<i class="Mobile_9"></i>
+							<i class="Mobile_4"></i>
+							<i class="Mobile_5"></i>
+						</a>
+					</div>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1 top_r_li2">
+					<a href="#" class="top_wddd">关注呆呆</a>
+					<i class="top_i"></i>
+					<div class="gzdd">
+						<i></i>
+					</div>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1">
+					<a href="#">先行赔付</a>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1 top_r_li2">
+					<a href="#" class="top_wddd">客户服务</a>
+					<i class="top_i"></i>
+					<div class="wd fix">
+						<a href="">消费者保障服务</a>
+						<a href="">售后服务</a>
+						<a href="">意见建议</a>
+						<a href="">在线客服</a>
+						<a href="">帮助中心</a>
+					</div>
+				</li>
+				<li class="top_r_li">|</li>
+				<li class="top_r_li1 top_r_li2">
+					<a href="#">网站导航</a>
+					<div class="header_div_ul10_div clearfix">
+						<dl class="header_div_ul10_dl">
+							<dt>特色主题</dt>
+							<dd><a href="#">品牌街</a></dd>
+							<dd><a href="#">近日抄底</a></dd>
+							<dd><a href="#">好东西</a></dd>
+							<dd><a href="#">呆呆预售</a></dd>
+							<dd><a href="#">金融精选</a></dd>
+							<dd><a href="#">呆呆首发</a></dd>
+							<dd><a href="#">今日团购</a></dd>
+							<dd><a href="#">优惠券</a></dd>
+							<dd><a href="#">闪购</a></dd>
+							<dd><a href="#">呆呆会员</a></dd>
+							<dd><a href="#">呆呆首选</a></dd>
+							<dd><a href="#">定期送</a></dd>
+							<dd><a href="#">装机大师</a></dd>
+							<dd><a href="#">搭配购</a></dd>
+							<dd><a href="#">呆呆试用</a></dd>
+							<dd><a href="#">礼品购</a></dd>
+							<dd><a href="#">智能馆</a></dd>
+							<dd><a href="#">玩逼格</a></dd>
+						</dl>
+						<dl class="header_div_ul10_dl1">
+							<dt>行业频道</dt>
+							<dd><a href="#">服装城</a></dd>
+							<dd><a href="#">家用电器</a></dd>
+							<dd><a href="#">电脑办公</a></dd>
+							<dd><a href="#">手机</a></dd>
+							<dd><a href="#">美妆</a></dd>
+							<dd><a href="#">食品</a></dd>
+							<dd><a href="#">数码</a></dd>
+							<dd><a href="#">母婴</a></dd>
+							<dd><a href="#">家装</a></dd>
+							<dd><a href="#">运动户外</a></dd>
+							<dd><a href="#">整车</a></dd>
+							<dd><a href="#">图书</a></dd>
+						</dl>
+						<dl class="header_div_ul10_dl1">
+							<dt>生活服务</dt>
+							<dd><a href="#">呆呆众筹</a></dd>
+							<dd><a href="#">白条</a></dd>
+							<dd><a href="#">镚镚钱包</a></dd>
+							<dd><a href="#">呆呆小金库</a></dd>
+							<dd><a href="#">理财</a></dd>
+							<dd><a href="#">话费</a></dd>
+							<dd><a href="#">旅行</a></dd>
+							<dd><a href="#">彩票</a></dd>
+							<dd><a href="#">游戏</a></dd>
+							<dd><a href="#">机票</a></dd>
+							<dd><a href="#">电影票</a></dd>
+							<dd><a href="#">水电煤</a></dd>
+							<dd><a href="#">呆呆到家</a></dd>
+						</dl>
+						<dl class="header_div_ul10_dl1 qrbk">
+							<dt>更多精选</dt>
+							<dd><a href="#">呆呆社区</a></dd>
+							<dd><a href="#">呆呆通信</a></dd>
+							<dd><a href="#">在线读书</a></dd>
+							<dd><a href="#">呆呆E卡</a></dd>
+							<dd><a href="#">智能社区</a></dd>
+							<dd><a href="#">游戏社区</a></dd>
+							<dd><a href="#">呆呆邦</a></dd>
+							<dd><a href="#">卖家入驻</a></dd>
+							<dd><a href="#">企业采购</a></dd>
+							<dd><a href="#">服务市场</a></dd>
+							<dd><a href="#">乡村招募</a></dd>
+							<dd><a href="#">校园加盟</a></dd>
+							<dd><a href="#">办公生活馆</a></dd>
+							<dd><a href="#">知识产权维权</a></dd>
+							<dd><a href="#">English Site</a></dd>
+						</dl>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+	//window.onload=function(){
+		//var oBox=document.getElementById('Sbox');
+		
+		//var oBoxT=oBox.offsetTop;
+		//window.onscroll=function(){
+			//var scroll=document.documentElement.scrollTop||document.body.scrollTop;
+			//if(oBoxT<=scroll){
+				//oBox.style.position='fixed';
+				
+			//}else{
+				//oBox.style.position='';
+				
+			//}
+		//}
+	//}
+	</script>
+	<!--搜索框-->
+	<div class="Sbox1" id="Sbox1">
+		<div class="Sbox Sbox2 clearfix" id="Sbox">
+				<h1 class="logo fl">呆呆购物</h1>
+				<div class="box fl">
+					<ul class="box_ul clearfix" id="box_top">
+						<li class="fl box_ul_sp"><a href="#" class="box_sps">商品</a></li>
+						<li class="fl box_ul_sp"><a href="#">商户</a></li>
+					</ul>
+					<div class="clearfix">
+						<input type="text" placeholder="输入关键字" class="box_center_T fl" />
+						<input id="search" type="button" value="搜索" class="box_center_B fl" onclick="javascript:window.location='次级页面.html'" />
+					</div>
+					<ul class="box_bottom">
+						<li><a href="#">散养芦花鸡蛋</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">陕西冬枣</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">四川红心猕猴桃</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">大闸蟹</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">蜂蜜</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">大闸蟹</a></li>
+						<li class="box_bottom_sx">|</li>
+						<li><a href="#">蜂蜜</a></li>
+					</ul>
+				</div>
+				<i class="Sbox_i"></i>
+		</div>
+	</div>
+	<!--导航-->
+	<div class="nav">
+		<div class="Sbox">
+			<ul class="nav_top clearfix">
+				<li class="nav_top_qb">全部商品分类
+					<i></i>
+				</li>
+				<li class="nav_top_sy"><a href="#">首页</a></li>
+                <li><a href="#">呆呆一道</a></li>
+				<li><a href="#">品质生活</a></li>
+				<li><a href="#">快销商品</a></li>
+				<li><a href="#">组团砍价</a></li>
+				<li><a href="#">大宗买卖</a></li>
+                <li><a href="#">习惯去哪</a></li>
+				<li><a href="#">三方品质专家</a></li>
+				<li class="nav_top_pty clearfix">
+					<a href="#" class="nav_top_p">赔</a>
+					<a href="#" class="nav_top_t">退</a>
+					<a href="#" class="nav_top_y">运</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!--导航分类-->
+    <div class="Sbox clearfix">
+			<ul class="nav_l fl">
+
+				<li class="nav_l_li">
+					<i class="nav_l_i">></i>
+					<a href="#">
+						<dl class="nav_l_Rice clearfix">
+							<dt>收纳整理</dt>
+							<dd>拖把</dd>
+							<dd>置物架</dd>
+							<dd>储物箱</dd>
+							<dd>拖把</dd>
+							<dd>置物架</dd>
+							<dd>储物箱</dd>
+							<dd>拖把</dd>
+							<dd>置物架</dd>
+							<dd>储物箱</dd>
+						</dl>
+					</a>
+					<div class="box_submenu clearfix">
+
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">大家电
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">平板电视</a></li>
+								<li><a href="#">空调</a></li>
+								<li><a href="#">冰箱</a></li>
+								<li><a href="#">洗衣机</a></li>
+								<li><a href="#">家庭影院</a></li>
+								<li><a href="#">DVD</a></li>
+								<li><a href="#">迷你音响</a></li>
+								<li><a href="#">烟机/灶具</a></li>
+								<li><a href="#">热水器</a></li>
+								<li><a href="#">消毒柜/洗碗机</a></li>
+								<li><a href="#">冷柜/冰吧</a></li>
+								<li><a href="#">酒柜</a></li>
+								<li><a href="#">家电配件</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">生活电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">冷风扇</a></li>
+								<li><a href="#">净化器</a></li>
+								<li><a href="#">加湿器</a></li>
+								<li><a href="#">扫地机器人</a></li>
+								<li><a href="#">吸尘器</a></li>
+								<li><a href="#">挂烫机/熨斗</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电话机</a></li>
+								<li><a href="#">清洁机</a></li>
+								<li><a href="#">除湿机</a></li>
+								<li><a href="#">干衣机</a></li>
+								<li><a href="#">收录/音机</a></li>
+								<li><a href="#">取暖器</a></li>
+								<li><a href="#">其他生活电器</a></li>
+								<li><a href="#">生活电器配件</a></li>
+								<li><a href="#">净水设备</a></li>
+								<li><a href="#">饮水机</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">厨房电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电压力锅</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">豆浆机</a></li>
+								<li><a href="#">面包机</a></li>
+								<li><a href="#">咖啡机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">料理/榨汁机</a></li>
+								<li><a href="#">电烤箱</a></li>
+								<li><a href="#">电磁炉</a></li>
+								<li><a href="#">煮蛋器</a></li>
+								<li><a href="#">电饼铛/烧烤盘</a></li>
+								<li><a href="#">酸奶机</a></li>
+								<li><a href="#">电热水壶/热水瓶</a></li>
+								<li><a href="#">电炖锅</a></li>
+								<li><a href="#">多用途锅</a></li>
+								<li><a href="#">果蔬解毒机</a></li>
+								<li><a href="#">养生壶/煎药壶</a></li>
+								<li><a href="#">电热饭盒</a></li>
+								<li><a href="#">其他厨房电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">个人健康
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">剃须刀</a></li>
+								<li><a href="#">剃/脱毛刀</a></li>
+								<li><a href="#">口腔护理</a></li>
+								<li><a href="#">电吹风</a></li>
+								<li><a href="#">美容器</a></li>
+								<li><a href="#">理发器</a></li>
+								<li><a href="#">卷/直发器</a></li>
+								<li><a href="#">按摩椅</a></li>
+								<li><a href="#">按摩器</a></li>
+								<li><a href="#">足浴盆</a></li>
+								<li><a href="#">血压计</a></li>
+								<li><a href="#">健康秤/厨房秤</a></li>
+								<li><a href="#">血糖仪</a></li>
+								<li><a href="#">体温计</a></li>
+								<li><a href="#">计步器/脂肪检测仪</a></li>
+								<li><a href="#">其他健康电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">五金家装
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电动工具</a></li>
+								<li><a href="#">手动工具</a></li>
+								<li><a href="#">仪器仪表</a></li>
+								<li><a href="#">浴霸/排气扇</a></li>
+								<li><a href="#">灯具</a></li>
+								<li><a href="#">LED灯</a></li>
+								<li><a href="#">洁身器</a></li>
+								<li><a href="#">水槽</a></li>
+								<li><a href="#">龙头</a></li>
+								<li><a href="#">淋浴花洒</a></li>
+								<li><a href="#">厨卫五金</a></li>
+								<li><a href="#">家具五金</a></li>
+								<li><a href="#">门铃</a></li>
+								<li><a href="#">电器开关</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电工电料</a></li>
+								<li><a href="#">监控安防</a></li>
+								<li><a href="#">电线/线缆</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+				<li class="nav_l_li">
+					<i class="nav_l_i">></i>
+					<a href="#">
+						<dl class="nav_l_Rice clearfix">
+							<dt>餐饮用具</dt>
+							<dd>锅具</dd>
+							<dd>餐具</dd>
+							<dd>茶具</dd>
+						</dl>
+					</a>
+					<div class="box_submenu clearfix">
+
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">大家电
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">平板电视</a></li>
+								<li><a href="#">空调</a></li>
+								<li><a href="#">冰箱</a></li>
+								<li><a href="#">洗衣机</a></li>
+								<li><a href="#">家庭影院</a></li>
+								<li><a href="#">DVD</a></li>
+								<li><a href="#">迷你音响</a></li>
+								<li><a href="#">烟机/灶具</a></li>
+								<li><a href="#">热水器</a></li>
+								<li><a href="#">消毒柜/洗碗机</a></li>
+								<li><a href="#">冷柜/冰吧</a></li>
+								<li><a href="#">酒柜</a></li>
+								<li><a href="#">家电配件</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">生活电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">冷风扇</a></li>
+								<li><a href="#">净化器</a></li>
+								<li><a href="#">加湿器</a></li>
+								<li><a href="#">扫地机器人</a></li>
+								<li><a href="#">吸尘器</a></li>
+								<li><a href="#">挂烫机/熨斗</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电话机</a></li>
+								<li><a href="#">清洁机</a></li>
+								<li><a href="#">除湿机</a></li>
+								<li><a href="#">干衣机</a></li>
+								<li><a href="#">收录/音机</a></li>
+								<li><a href="#">取暖器</a></li>
+								<li><a href="#">其他生活电器</a></li>
+								<li><a href="#">生活电器配件</a></li>
+								<li><a href="#">净水设备</a></li>
+								<li><a href="#">饮水机</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">厨房电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电压力锅</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">豆浆机</a></li>
+								<li><a href="#">面包机</a></li>
+								<li><a href="#">咖啡机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">料理/榨汁机</a></li>
+								<li><a href="#">电烤箱</a></li>
+								<li><a href="#">电磁炉</a></li>
+								<li><a href="#">煮蛋器</a></li>
+								<li><a href="#">电饼铛/烧烤盘</a></li>
+								<li><a href="#">酸奶机</a></li>
+								<li><a href="#">电热水壶/热水瓶</a></li>
+								<li><a href="#">电炖锅</a></li>
+								<li><a href="#">多用途锅</a></li>
+								<li><a href="#">果蔬解毒机</a></li>
+								<li><a href="#">养生壶/煎药壶</a></li>
+								<li><a href="#">电热饭盒</a></li>
+								<li><a href="#">其他厨房电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">个人健康
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">剃须刀</a></li>
+								<li><a href="#">剃/脱毛刀</a></li>
+								<li><a href="#">口腔护理</a></li>
+								<li><a href="#">电吹风</a></li>
+								<li><a href="#">美容器</a></li>
+								<li><a href="#">理发器</a></li>
+								<li><a href="#">卷/直发器</a></li>
+								<li><a href="#">按摩椅</a></li>
+								<li><a href="#">按摩器</a></li>
+								<li><a href="#">足浴盆</a></li>
+								<li><a href="#">血压计</a></li>
+								<li><a href="#">健康秤/厨房秤</a></li>
+								<li><a href="#">血糖仪</a></li>
+								<li><a href="#">体温计</a></li>
+								<li><a href="#">计步器/脂肪检测仪</a></li>
+								<li><a href="#">其他健康电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">五金家装
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电动工具</a></li>
+								<li><a href="#">手动工具</a></li>
+								<li><a href="#">仪器仪表</a></li>
+								<li><a href="#">浴霸/排气扇</a></li>
+								<li><a href="#">灯具</a></li>
+								<li><a href="#">LED灯</a></li>
+								<li><a href="#">洁身器</a></li>
+								<li><a href="#">水槽</a></li>
+								<li><a href="#">龙头</a></li>
+								<li><a href="#">淋浴花洒</a></li>
+								<li><a href="#">厨卫五金</a></li>
+								<li><a href="#">家具五金</a></li>
+								<li><a href="#">门铃</a></li>
+								<li><a href="#">电器开关</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电工电料</a></li>
+								<li><a href="#">监控安防</a></li>
+								<li><a href="#">电线/线缆</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+				<li class="nav_l_li">
+					<i class="nav_l_i">></i>
+					<a href="#">
+						<dl class="nav_l_Rice clearfix">
+							<dt>洗护清洁</dt>
+							<dd>洗发水</dd>
+							<dd>牙刷</dd>
+							<dd>洗衣粉</dd>
+						</dl>
+					</a>
+
+					<div class="box_submenu clearfix">
+
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">大家电
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">平板电视</a></li>
+								<li><a href="#">空调</a></li>
+								<li><a href="#">冰箱</a></li>
+								<li><a href="#">洗衣机</a></li>
+								<li><a href="#">家庭影院</a></li>
+								<li><a href="#">DVD</a></li>
+								<li><a href="#">迷你音响</a></li>
+								<li><a href="#">烟机/灶具</a></li>
+								<li><a href="#">热水器</a></li>
+								<li><a href="#">消毒柜/洗碗机</a></li>
+								<li><a href="#">冷柜/冰吧</a></li>
+								<li><a href="#">酒柜</a></li>
+								<li><a href="#">家电配件</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">生活电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">冷风扇</a></li>
+								<li><a href="#">净化器</a></li>
+								<li><a href="#">加湿器</a></li>
+								<li><a href="#">扫地机器人</a></li>
+								<li><a href="#">吸尘器</a></li>
+								<li><a href="#">挂烫机/熨斗</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电话机</a></li>
+								<li><a href="#">清洁机</a></li>
+								<li><a href="#">除湿机</a></li>
+								<li><a href="#">干衣机</a></li>
+								<li><a href="#">收录/音机</a></li>
+								<li><a href="#">取暖器</a></li>
+								<li><a href="#">其他生活电器</a></li>
+								<li><a href="#">生活电器配件</a></li>
+								<li><a href="#">净水设备</a></li>
+								<li><a href="#">饮水机</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">厨房电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电压力锅</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">豆浆机</a></li>
+								<li><a href="#">面包机</a></li>
+								<li><a href="#">咖啡机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">料理/榨汁机</a></li>
+								<li><a href="#">电烤箱</a></li>
+								<li><a href="#">电磁炉</a></li>
+								<li><a href="#">煮蛋器</a></li>
+								<li><a href="#">电饼铛/烧烤盘</a></li>
+								<li><a href="#">酸奶机</a></li>
+								<li><a href="#">电热水壶/热水瓶</a></li>
+								<li><a href="#">电炖锅</a></li>
+								<li><a href="#">多用途锅</a></li>
+								<li><a href="#">果蔬解毒机</a></li>
+								<li><a href="#">养生壶/煎药壶</a></li>
+								<li><a href="#">电热饭盒</a></li>
+								<li><a href="#">其他厨房电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">个人健康
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">剃须刀</a></li>
+								<li><a href="#">剃/脱毛刀</a></li>
+								<li><a href="#">口腔护理</a></li>
+								<li><a href="#">电吹风</a></li>
+								<li><a href="#">美容器</a></li>
+								<li><a href="#">理发器</a></li>
+								<li><a href="#">卷/直发器</a></li>
+								<li><a href="#">按摩椅</a></li>
+								<li><a href="#">按摩器</a></li>
+								<li><a href="#">足浴盆</a></li>
+								<li><a href="#">血压计</a></li>
+								<li><a href="#">健康秤/厨房秤</a></li>
+								<li><a href="#">血糖仪</a></li>
+								<li><a href="#">体温计</a></li>
+								<li><a href="#">计步器/脂肪检测仪</a></li>
+								<li><a href="#">其他健康电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">五金家装
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电动工具</a></li>
+								<li><a href="#">手动工具</a></li>
+								<li><a href="#">仪器仪表</a></li>
+								<li><a href="#">浴霸/排气扇</a></li>
+								<li><a href="#">灯具</a></li>
+								<li><a href="#">LED灯</a></li>
+								<li><a href="#">洁身器</a></li>
+								<li><a href="#">水槽</a></li>
+								<li><a href="#">龙头</a></li>
+								<li><a href="#">淋浴花洒</a></li>
+								<li><a href="#">厨卫五金</a></li>
+								<li><a href="#">家具五金</a></li>
+								<li><a href="#">门铃</a></li>
+								<li><a href="#">电器开关</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电工电料</a></li>
+								<li><a href="#">监控安防</a></li>
+								<li><a href="#">电线/线缆</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+				<li class="nav_l_li">
+					<i class="nav_l_i">></i>
+					<a href="#">
+						<dl class="nav_l_Rice clearfix">
+							<dt>酒水饮料</dt>
+							<dd>白酒</dd>
+							<dd>啤酒</dd>
+							<dd>洋酒</dd>
+						</dl>
+					</a>
+
+					<div class="box_submenu clearfix">
+
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">大家电
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">平板电视</a></li>
+								<li><a href="#">空调</a></li>
+								<li><a href="#">冰箱</a></li>
+								<li><a href="#">洗衣机</a></li>
+								<li><a href="#">家庭影院</a></li>
+								<li><a href="#">DVD</a></li>
+								<li><a href="#">迷你音响</a></li>
+								<li><a href="#">烟机/灶具</a></li>
+								<li><a href="#">热水器</a></li>
+								<li><a href="#">消毒柜/洗碗机</a></li>
+								<li><a href="#">冷柜/冰吧</a></li>
+								<li><a href="#">酒柜</a></li>
+								<li><a href="#">家电配件</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">生活电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">冷风扇</a></li>
+								<li><a href="#">净化器</a></li>
+								<li><a href="#">加湿器</a></li>
+								<li><a href="#">扫地机器人</a></li>
+								<li><a href="#">吸尘器</a></li>
+								<li><a href="#">挂烫机/熨斗</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电话机</a></li>
+								<li><a href="#">清洁机</a></li>
+								<li><a href="#">除湿机</a></li>
+								<li><a href="#">干衣机</a></li>
+								<li><a href="#">收录/音机</a></li>
+								<li><a href="#">取暖器</a></li>
+								<li><a href="#">其他生活电器</a></li>
+								<li><a href="#">生活电器配件</a></li>
+								<li><a href="#">净水设备</a></li>
+								<li><a href="#">饮水机</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">厨房电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电压力锅</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">豆浆机</a></li>
+								<li><a href="#">面包机</a></li>
+								<li><a href="#">咖啡机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">料理/榨汁机</a></li>
+								<li><a href="#">电烤箱</a></li>
+								<li><a href="#">电磁炉</a></li>
+								<li><a href="#">煮蛋器</a></li>
+								<li><a href="#">电饼铛/烧烤盘</a></li>
+								<li><a href="#">酸奶机</a></li>
+								<li><a href="#">电热水壶/热水瓶</a></li>
+								<li><a href="#">电炖锅</a></li>
+								<li><a href="#">多用途锅</a></li>
+								<li><a href="#">果蔬解毒机</a></li>
+								<li><a href="#">养生壶/煎药壶</a></li>
+								<li><a href="#">电热饭盒</a></li>
+								<li><a href="#">其他厨房电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">个人健康
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">剃须刀</a></li>
+								<li><a href="#">剃/脱毛刀</a></li>
+								<li><a href="#">口腔护理</a></li>
+								<li><a href="#">电吹风</a></li>
+								<li><a href="#">美容器</a></li>
+								<li><a href="#">理发器</a></li>
+								<li><a href="#">卷/直发器</a></li>
+								<li><a href="#">按摩椅</a></li>
+								<li><a href="#">按摩器</a></li>
+								<li><a href="#">足浴盆</a></li>
+								<li><a href="#">血压计</a></li>
+								<li><a href="#">健康秤/厨房秤</a></li>
+								<li><a href="#">血糖仪</a></li>
+								<li><a href="#">体温计</a></li>
+								<li><a href="#">计步器/脂肪检测仪</a></li>
+								<li><a href="#">其他健康电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">五金家装
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电动工具</a></li>
+								<li><a href="#">手动工具</a></li>
+								<li><a href="#">仪器仪表</a></li>
+								<li><a href="#">浴霸/排气扇</a></li>
+								<li><a href="#">灯具</a></li>
+								<li><a href="#">LED灯</a></li>
+								<li><a href="#">洁身器</a></li>
+								<li><a href="#">水槽</a></li>
+								<li><a href="#">龙头</a></li>
+								<li><a href="#">淋浴花洒</a></li>
+								<li><a href="#">厨卫五金</a></li>
+								<li><a href="#">家具五金</a></li>
+								<li><a href="#">门铃</a></li>
+								<li><a href="#">电器开关</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电工电料</a></li>
+								<li><a href="#">监控安防</a></li>
+								<li><a href="#">电线/线缆</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+				<li class="nav_l_li">
+					<i class="nav_l_i">></i>
+					<a href="#">
+						<dl class="nav_l_Rice clearfix">
+							<dt>小型家电</dt>
+							<dd>微波炉</dd>
+							<dd>电饭煲</dd>
+							<dd>榨汁机</dd>
+						</dl>
+					</a>
+
+					<div class="box_submenu clearfix">
+
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">大家电
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">平板电视</a></li>
+								<li><a href="#">空调</a></li>
+								<li><a href="#">冰箱</a></li>
+								<li><a href="#">洗衣机</a></li>
+								<li><a href="#">家庭影院</a></li>
+								<li><a href="#">DVD</a></li>
+								<li><a href="#">迷你音响</a></li>
+								<li><a href="#">烟机/灶具</a></li>
+								<li><a href="#">热水器</a></li>
+								<li><a href="#">消毒柜/洗碗机</a></li>
+								<li><a href="#">冷柜/冰吧</a></li>
+								<li><a href="#">酒柜</a></li>
+								<li><a href="#">家电配件</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">生活电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电风扇</a></li>
+								<li><a href="#">冷风扇</a></li>
+								<li><a href="#">净化器</a></li>
+								<li><a href="#">加湿器</a></li>
+								<li><a href="#">扫地机器人</a></li>
+								<li><a href="#">吸尘器</a></li>
+								<li><a href="#">挂烫机/熨斗</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电话机</a></li>
+								<li><a href="#">清洁机</a></li>
+								<li><a href="#">除湿机</a></li>
+								<li><a href="#">干衣机</a></li>
+								<li><a href="#">收录/音机</a></li>
+								<li><a href="#">取暖器</a></li>
+								<li><a href="#">其他生活电器</a></li>
+								<li><a href="#">生活电器配件</a></li>
+								<li><a href="#">净水设备</a></li>
+								<li><a href="#">饮水机</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">厨房电器
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电压力锅</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">豆浆机</a></li>
+								<li><a href="#">面包机</a></li>
+								<li><a href="#">咖啡机</a></li>
+								<li><a href="#">微波炉</a></li>
+								<li><a href="#">料理/榨汁机</a></li>
+								<li><a href="#">电烤箱</a></li>
+								<li><a href="#">电磁炉</a></li>
+								<li><a href="#">煮蛋器</a></li>
+								<li><a href="#">电饼铛/烧烤盘</a></li>
+								<li><a href="#">酸奶机</a></li>
+								<li><a href="#">电热水壶/热水瓶</a></li>
+								<li><a href="#">电炖锅</a></li>
+								<li><a href="#">多用途锅</a></li>
+								<li><a href="#">果蔬解毒机</a></li>
+								<li><a href="#">养生壶/煎药壶</a></li>
+								<li><a href="#">电热饭盒</a></li>
+								<li><a href="#">其他厨房电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">个人健康
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">剃须刀</a></li>
+								<li><a href="#">剃/脱毛刀</a></li>
+								<li><a href="#">口腔护理</a></li>
+								<li><a href="#">电吹风</a></li>
+								<li><a href="#">美容器</a></li>
+								<li><a href="#">理发器</a></li>
+								<li><a href="#">卷/直发器</a></li>
+								<li><a href="#">按摩椅</a></li>
+								<li><a href="#">按摩器</a></li>
+								<li><a href="#">足浴盆</a></li>
+								<li><a href="#">血压计</a></li>
+								<li><a href="#">健康秤/厨房秤</a></li>
+								<li><a href="#">血糖仪</a></li>
+								<li><a href="#">体温计</a></li>
+								<li><a href="#">计步器/脂肪检测仪</a></li>
+								<li><a href="#">其他健康电器</a></li>
+							</ul>
+						</div>
+						<div class="bsubmenu_div2 clearfix">
+							<a href="#" class="bsubmenu_div2_a fl">五金家装
+                                	<i>></i>
+                                </a>
+							<ul class="bsubmenu_div2_ul clearfix fl">
+								<li><a href="#">电动工具</a></li>
+								<li><a href="#">手动工具</a></li>
+								<li><a href="#">仪器仪表</a></li>
+								<li><a href="#">浴霸/排气扇</a></li>
+								<li><a href="#">灯具</a></li>
+								<li><a href="#">LED灯</a></li>
+								<li><a href="#">洁身器</a></li>
+								<li><a href="#">水槽</a></li>
+								<li><a href="#">龙头</a></li>
+								<li><a href="#">淋浴花洒</a></li>
+								<li><a href="#">厨卫五金</a></li>
+								<li><a href="#">家具五金</a></li>
+								<li><a href="#">门铃</a></li>
+								<li><a href="#">电器开关</a></li>
+								<li><a href="#">插座</a></li>
+								<li><a href="#">电工电料</a></li>
+								<li><a href="#">监控安防</a></li>
+								<li><a href="#">电线/线缆</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</li>
+
+			</ul>
+
+
+			<script type="text/javascript">
+				$('.nav_l > li').hover(function() {
+					var h = $(document).scrollTop() - $('.nav_l').offset().top;
+					if (h > 0) {
+						$('> .box_submenu', this).css('top', h);
+					} else {
+						$('> .box_submenu', this).css('top', 0);
+					}
+				});
+			</script>
+
+		<div class="fl" style="margin-left:10px;" >
+             <div class="por sy_por" id="box">
+                <ul class="sy_lun">
+                    <li class="sy_bo">
+                        <img src="img/nav_meishipa.jpg" alt="美食趴" />
+                    </li>
+                    <li>
+                        <img src="img/56446021N511a6879.jpg" alt="美食趴" />
+                    </li>
+                    <li>
+                        <img src="img/Advertisement_bottom1.jpg" alt="美食趴" />
+                    </li>
+                </ul>
+                <div class="sy_cang">
+                    <a href="javascript:;" id="prev" class="sy_left">
+                        <i></i>
+                        <span></span>
+                    </a>
+                </div>
+                <div class="sy_cang1">
+                    <a href="javascript:;" id="next" class="sy_right">
+                        <i></i>
+                        <span></span>
+                    </a>
+               </div>
+            </div>
+  
+		<div class="por" id="mian">
+        	<ul class="sy_lun1">
+				<li class="sy_bo1 clearfix">
+					<a href="#">
+						<img src="img/Advertisement_bottom1.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom1.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom1.jpg" alt="表" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/Advertisement_bottom2.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom2.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom2.jpg" alt="表" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/Advertisement_bottom3.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom3.jpg" alt="表" />
+					</a>
+                    <a href="#">
+						<img src="img/Advertisement_bottom3.jpg" alt="表" />
+					</a>
+				</li>
+			</ul>
+            <a href="javascript:;" id="prev1" class="sy_left1">
+            	<img src="img/left.jpg">
+            </a>
+   			<a href="javascript:;" id="next2" class="sy_right1">
+            	<img src="img/right.jpg">
+            </a>
+		</div>
+     </div>
+
+
+		<div class="fr">
+			<div class="Comment">
+				<ul class="clearfix Comment_ul" id="Comment">
+					<li class="Comment_zl">质量点评栏</li>
+					<li>呆呆快报</li>
+				</ul>
+				<ul class="Content" id="Content">
+					<li class="Content_li">
+						<div class="gao xs">
+							<div class="clearfix por mtop">
+                            	<img src="img/56446021N511a6879.jpg" style="width:70px; height:70px;" class="fl" />
+                            	<p class="fl" class="">夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤害很小呐~~　</p>
+							</div>
+                           <div class="clearfix por mtop">
+                            	<img src="img/56446021N511a6879.jpg" style="width:70px; height:70px;" class="fl" />
+                            	<p class="fl" class="">夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤害很小呐~~　</p>
+							</div>
+                            <div class="clearfix por mtop">
+                            	<img src="img/56446021N511a6879.jpg" style="width:70px; height:70px;" class="fl" />
+                            	<p class="fl" class="">夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤夏洛特之心:自从买从买了这个我们宿舍的同学都不用自己从买了这个我们宿舍的同学都不用自己了这个我们宿舍的同学都不用自己的吹风机了~~负离子对头发伤呐~~　</p>
+							</div>
+						</div>
+						<a href="#" class="tp">
+							<img src="img/pinglun.jpg" />
+						</a>
+
+					</li>
+					<li>
+						<div class="boxr_div2">
+							<a href="#" class="boxr_div_a">
+								<span>【特惠】</span>呆呆值得买 低至9.9元</a>
+							<a href="#" class="boxr_div_a">
+								<span>【公告】</span>京华杯智能硬件创新创业大赛启</a>
+							<a href="#" class="boxr_div_a">
+								<span>【特惠】</span>华南8周年盛典 爆品1元起抢</a>
+							<a href="#" class="boxr_div_a">
+								<span>【公告】</span>呆呆启动空净节 渠道优势明显</a>
+							<a href="#" class="boxr_div_a boxr_diva">
+								<span>【特惠】</span>奶粉2段 首购5折</a>
+							<a href="#" class="boxr_div_a">
+								<span>【公告】</span>京东启动空净节 渠道优势明显</a>
+							<a href="#" class="boxr_div_a boxr_diva">
+								<span>【特惠】</span>奶粉2段 首购5折</a>
+							<a href="#" class="boxr_div_a">
+								<span>【公告】</span>呆呆启动空净节 渠道优势明显</a>
+							<a href="#" class="boxr_div_a boxr_diva">
+								<span>【特惠】</span>奶粉2段 首购5折</a>
+							<a href="#" class="boxr_div_a">
+								<span>【公告】</span>呆呆启动空净节 渠道优势明显</a>
+
+						</div>
+						<a href="#" class="More">更多></a>
+					</li>
+				</ul>
+
+			</div>
+			<ul class="Convenience clearfix">
+				<li class="Bill">
+					<a href="#">
+						<i></i>
+						<p>话费</p>
+					</a>
+				</li>
+				<li class="Flight">
+					<i></i>
+					<p>机票</p>
+					</a>
+				</li>
+				<li class="Movie">
+					<a href="#">
+						<i></i>
+						<p>电影票</p>
+					</a>
+				</li>
+				<li class="Game">
+					<a href="#">
+						<i></i>
+						<p>游戏</p>
+					</a>
+				</li>
+				<li class="Lottery">
+					<a href="#">
+						<i></i>
+						<p>彩票</p>
+					</a>
+				</li>
+				<li class="Group">
+					<a href="#">
+						<i></i>
+						<p>团购</p>
+					</a>
+				</li>
+				<li class="Hotel">
+					<a href="#">
+						<i></i>
+						<p>酒店</p>
+					</a>
+				</li>
+				<li class="Water">
+					<a href="#">
+						<i></i>
+						<p>水电煤</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--内容一-->
+	<div class="Sbox neirongy clearfix">
+		<div class="fl">
+			<ul class="Time clearfix" id="Time">
+				<li class="Panic">限时抢购</li>
+				<li>新品上市</li>
+				<li>每周推荐</li>
+			</ul>
+			<div class="Time_nr" id="Time_nr">
+				<ul class="clearfix Time_nr1">
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_2.jpg" alt="图片" />
+							<p class="Time_sc_p">健康蔬菜大礼包</p>
+							<p class="Time_sc_p2">￥69.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_1.jpg" />
+							<p class="Time_sc_p">精品文房四宝</p>
+							<p class="Time_sc_p2">￥388.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_3.jpg" />
+							<p class="Time_sc_p">欧莱雅游戏控套装</p>
+							<p class="Time_sc_p2">￥139.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_4.jpg" />
+							<p class="Time_sc_p">北极冰山蚌</p>
+							<p class="Time_sc_p2">￥158.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_5.jpg" />
+							<p class="Time_sc_p">三星Gear Fit R350</p>
+							<p class="Time_sc_p2">￥568.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_6.jpg" />
+							<p class="Time_sc_p">新疆库尔勒香梨</p>
+							<p class="Time_sc_p2">￥10.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_7.jpg" />
+							<p class="Time_sc_p">李宁轻质跑鞋</p>
+							<p class="Time_sc_p2">￥199.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_8.jpg" />
+							<p class="Time_sc_p">匡威双肩包2015夏款</p>
+							<p class="Time_sc_p2">￥188.00</p>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_2.jpg" />
+							<p class="Time_sc_p">健康蔬菜大礼包</p>
+							<p class="Time_sc_p2">￥69.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_1.jpg" />
+							<p class="Time_sc_p">精品文房四宝</p>
+							<p class="Time_sc_p2">￥388.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_3.jpg" />
+							<p class="Time_sc_p">欧莱雅游戏控套装</p>
+							<p class="Time_sc_p2">￥139.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_4.jpg" />
+							<p class="Time_sc_p">北极冰山蚌</p>
+							<p class="Time_sc_p2">￥158.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_5.jpg" />
+							<p class="Time_sc_p">三星Gear Fit R350</p>
+							<p class="Time_sc_p2">￥568.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_6.jpg" />
+							<p class="Time_sc_p">新疆库尔勒香梨</p>
+							<p class="Time_sc_p2">￥10.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_7.jpg" />
+							<p class="Time_sc_p">李宁轻质跑鞋</p>
+							<p class="Time_sc_p2">￥199.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_8.jpg" />
+							<p class="Time_sc_p">匡威双肩包2015夏款</p>
+							<p class="Time_sc_p2">￥188.00</p>
+						</a>
+					</li>
+				</ul>
+				<ul class="clearfix">
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_2.jpg" />
+							<p class="Time_sc_p">健康蔬菜大礼包</p>
+							<p class="Time_sc_p2">￥69.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_1.jpg" />
+							<p class="Time_sc_p">精品文房四宝</p>
+							<p class="Time_sc_p2">￥388.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_3.jpg" />
+							<p class="Time_sc_p">欧莱雅游戏控套装</p>
+							<p class="Time_sc_p2">￥139.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_4.jpg" />
+							<p class="Time_sc_p">北极冰山蚌</p>
+							<p class="Time_sc_p2">￥158.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_5.jpg" />
+							<p class="Time_sc_p">三星Gear Fit R350</p>
+							<p class="Time_sc_p2">￥568.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_6.jpg" />
+							<p class="Time_sc_p">新疆库尔勒香梨</p>
+							<p class="Time_sc_p2">￥10.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_7.jpg" />
+							<p class="Time_sc_p">李宁轻质跑鞋</p>
+							<p class="Time_sc_p2">￥199.00</p>
+						</a>
+					</li>
+					<li class="Time_sc">
+						<a href="#">
+							<img src="img/Timelimit_8.jpg" />
+							<p class="Time_sc_p">匡威双肩包2015夏款</p>
+							<p class="Time_sc_p2">￥188.00</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="Today fr">
+			<h3 class="h3 clearfix">
+				今日推荐
+				<span>MORE</span>
+				<ul class="h3_ty fr clearfix" id="h3_ty">
+					<li class="h3_ty_li"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</h3>
+			<div class="Todays" id="Todays">
+				<a href="#" class="clearfix Todays_a">
+					<img src="img/rBEQWFNgcsoIAAAAAAHbK41Ly44AAFy8QAM4HwAAdtD490.jpg" alt="盼酒" class="Today_img" />
+					<p class="Today_p">汾酒蓝瓷53度 475ml</p>
+					<p class="Today_p1">
+						<span class="Today_p1_span">￥99.00</span>
+						<span class="Today_p1_span1">去看看</span>
+					</p>
+				</a>
+				<a href="#" class="clearfix">
+					<img src="img/rBEQWFNgcsoIAAAAAAHbK41Ly44AAFy8QAM4HwAAdtD490.jpg" alt="盼酒" class="Today_img" />
+					<p class="Today_p">汾酒蓝瓷53度 475ml</p>
+					<p class="Today_p1">
+						<span class="Today_p1_span">￥99.00</span>
+						<span class="Today_p1_span1">去看看</span>
+					</p>
+				</a>
+				<a href="#" class="clearfix">
+					<img src="img/rBEQWFNgcsoIAAAAAAHbK41Ly44AAFy8QAM4HwAAdtD490.jpg" alt="盼酒" class="Today_img" />
+					<p class="Today_p">汾酒蓝瓷53度 475ml</p>
+					<p class="Today_p1">
+						<span class="Today_p1_span">￥99.00</span>
+						<span class="Today_p1_span1">去看看</span>
+					</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--日用百货-->
+	<div id="1f" class="Sbox Departmentstore">
+		<div class="Depar clearfix">
+			<h3 class="Department fl">日用百货
+				<i></i>
+			</h3>
+			<ul class="Department_r clearfix fr" id="Department_r">
+				<li class="Dr">
+					<p></p>
+					<span>雨具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>毛巾</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>浴袍</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>居家鞋</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>节庆</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>除味</span>
+				</li>
+			</ul>
+		</div>
+		<div class="Raingear" id="Raingear">
+			<ul class="clearfix Raingears">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--安心厨房-->
+	<div id="2f" class="Sbox Departmentstore">
+		<div class="Depar clearfix">
+			<h3 class="Department fl">安心厨房
+				<i></i>
+			</h3>
+			<ul class="Department_r clearfix fr" id="Kitchen">
+				<li class="Dr">
+					<p></p>
+					<span>茶具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>水具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>餐具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>咖啡具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>酒具</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>刀具</span>
+				</li>
+			</ul>
+		</div>
+		<div class="Raingear" id="Kitchen_nr">
+			<ul class="clearfix Raingears">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--生鲜果蔬-->
+	<div id="3f" class="Sbox Departmentstore">
+		<div class="Depar clearfix">
+			<h3 class="Department fl">生鲜果蔬
+				<i></i>
+			</h3>
+			<ul class="Department_r clearfix fr" id="Fresh">
+				<li class="Dr">
+					<p></p>
+					<span>蔬菜</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>国产水果</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>台湾水果</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>进口水果</span>
+				</li>
+
+			</ul>
+		</div>
+		<div class="Raingear" id="Fresh_nr">
+			<ul class="clearfix Raingears">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<div class="duofen_div clearfix">
+						<a href="#" class="ku">
+							<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>澳洲0akwood皮革护理套装</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+						<a href="#" class="ku">
+							<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>澳洲0akwood皮革护理套装</p>
+						</a>
+
+					</div>
+
+				</li>
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--酒水百货-->
+	<div id="4f" class="Sbox Departmentstore">
+		<div class="Depar clearfix">
+			<h3 class="Department fl">酒水百货
+				<i></i>
+			</h3>
+			<ul class="Department_r clearfix fr" id="Wine">
+				<li class="Dr">
+					<p></p>
+					<span>啤酒</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>洋酒</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>果汁</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>茶饮料</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>咖啡</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>乳品</span>
+				</li>
+
+			</ul>
+		</div>
+		<div class="Raingear" id="Wine_nr">
+			<ul class="clearfix Raingears">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--粮油食品-->
+	<div id="5f" class="Sbox Departmentstore rainandoil">
+		<div class="Depar clearfix">
+			<h3 class="Department fl">粮油食品
+				<i></i>
+			</h3>
+			<ul class="Department_r clearfix fr" id="Grainandoil">
+				<li class="Dr">
+					<p></p>
+					<span>大米</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>面粉</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>黄豆</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>食用油</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>挂面</span>
+					<i></i>
+				</li>
+				<li>
+					<p></p>
+					<span>腌肉</span>
+				</li>
+
+			</ul>
+		</div>
+		<div class="Raingear" id="rainandoil_nr">
+			<ul class="clearfix Raingears">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="clearfix">
+				<li class="Raingears_li">
+					<a href="#">
+						<img src="img/Departmentstore1.jpg" alt="初夏精选" />
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore2.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>多芬（DOVE）沐浴露</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore4.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>美的LED护眼台灯</p>
+					</a>
+				</li>
+				<li class="duofen">
+					<a href="#">
+						<img src="img/Departmentstore3.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>泡花草茶礼盒套装</p>
+					</a>
+					<a href="#">
+						<img src="img/Departmentstore5.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>佳洁士康牙龈红肿出血牙膏</p>
+					</a>
+				</li>
+				<li class="duofen1 duofen">
+					<a href="#" class="ku">
+						<img src="img/bg.jpg" alt="多芬（DOVE）沐浴露" />
+						<p>澳洲0akwood皮革护理套装</p>
+					</a>
+					<div class="duofen_div clearfix">
+						<a href="#">
+							<img src="img/Departmentstore6.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>高露洁纤柔备长碳牙刷</p>
+						</a>
+						<a href="#">
+							<img src="img/Departmentstore7.jpg" alt="多芬（DOVE）沐浴露" />
+							<p>力士（LUX）沐浴露</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--底部-->
+	<div class="bottom">
+		<div class="Sbox">
+			<ul class="Atthebottom ">
+				<li><a href="#">全程冷链配送
+					<i></i>
+				</a></li>
+				<li><a href="#">有机绿色无公害
+					<i class="ai"></i>
+				</a></li>
+				<li><a href="#">从基地到餐桌
+					<i class="ai1"></i>
+				</a></li>
+				<li><a href="#">满59元免运送费
+					<i class="ai2"></i>
+				</a></li>
+				<li><a href="#">社区最后一公里
+					<i class="ai3"></i>
+				</a></li>
+			</ul>
+			<div class="Safety clearfix ">
+				<dl class="Safetys">
+					<dt>食品安全</dt>
+					<dd><a href="#">食品卫生</a></dd>
+					<dd><a href="#">食品监督</a></dd>
+					<dd><a href="#">质量检测</a></dd>
+				</dl>
+				<dl class="Safetys Novice">
+					<dt>新手上路</dt>
+					<dd><a href="#">注册登录</a></dd>
+					<dd><a href="#">购物流程</a></dd>
+					<dd><a href="#">团购说明</a></dd>
+				</dl>
+				<dl class="Safetys Distribution">
+					<dt>配送方式</dt>
+					<dd><a href="#">配送范围</a></dd>
+					<dd><a href="#">配送费用</a></dd>
+					<dd><a href="#">配送时间</a></dd>
+				</dl>
+				<dl class="Safetys Novice">
+					<dt>支付方式</dt>
+					<dd><a href="#">货到付款</a></dd>
+					<dd><a href="#">货到刷卡</a></dd>
+					<dd><a href="#">在线支付</a></dd>
+				</dl>
+				<dl class="Safetys Service">
+					<dt>售后服务</dt>
+					<dd><a href="#">退换货条件</a></dd>
+					<dd><a href="#">退换货流程</a></dd>
+					<dd><a href="#">退换货准则</a></dd>
+				</dl>
+				<div class="Client">
+					<p class="Client_p">手机客户端
+						<i></i>
+					</p>
+					<p class="Client_p1">轻松购物，迅速到家！</p>
+					<div class="Client_div">
+						<i class="Client_div_i"></i>
+						<a href="#" class="Client_div_a"></a>
+						<a href="#" class="Client_div_a1"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom1">
+		<div class="bottom1_div">
+			<a href="#">关于我们</a>
+			<i>|</i>
+			<a href="#">法律声明</a>
+			<i>|</i>
+			<a href="#">服务条款</a>
+			<i>|</i>
+			<a href="#">隐私声名</a>
+			<i>|</i>
+			<a href="#">联系我们</a>
+			<i>|</i>
+			<a href="#">网站地图</a>
+		</div>
+		<p class="bottom1_p">北京市公安局朝阳分局备案编号110105014669
+			<span>|</span>京ICP证070359号</p>
+		<p class="bottom1_p1">
+			Copyright © 2004-2015 呆呆购物DDGW8.com 版权所有
+		</p>
+	</div>
+	<div class="bx_back" style="position:absolute; left:26%; top:0px; z-index:999; display:none;" id="biaodan">
+		<i class="bx_Close" id="Clos"></i>
+		<div class="bx_logo clearfix">
+			<h1 class="bx_logo_h1">呆呆购物</h1>
+			<div class="fl">
+				<h2 class="bx_logo_h2">呆呆养老保险申请表</h2>
+				<p class="bx_logo_p">(仅限注册账户本人申请领取)</p>
+			</div>
+		</div>
+		<p class="bx_Basic">您的基本资料</p>
+		<div class="bx_Basic_Data">
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>中文姓名</p>
+				<input type="text" class="fl bx_name_text" />
+				<span class="bx_name_span fl">姓名不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">婚姻状况：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.已婚</p>
+					<input type="radio" name="hun" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.未婚</p>
+					<input type="radio" name="hun" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.其他</p>
+					<input type="radio" name="hun" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<p class="bx_name_p fl">子女状况：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.有</p>
+					<input type="radio" name="zi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.无</p>
+					<input type="radio" name="zi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">男</p>
+					<input type="radio" name="xing" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">女</p>
+					<input type="radio" name="xing" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<span class="bx_name_span fl">姓别不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>出生日期</p>
+				<input type="text" class="fl bx_name_text bx_Company1" name="date15" />
+				<span class="bx_name_span fl">出生日期不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>国家/地区：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.中国大陆</p>
+					<input type="radio" name="guo" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.港澳人士</p>
+					<input type="radio" name="guo" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.台籍人士</p>
+					<input type="radio" name="guo" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">4.外籍人士</p>
+					<input type="radio" name="guo" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<span class="bx_name_span fl">国家/地区不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>证件类型：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.境内居民身份证</p>
+					<input type="radio" name="zheng" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.护照</p>
+					<input type="radio" name="zheng" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.其他实名证件</p>
+					<input type="radio" name="zheng" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<p class="bx_name_p1 fl">请列明</p>
+				<input type="text" class="fl bx_name_text" />
+				<span class="bx_name_span fl">证件类型不能为空</span>
+			</div>
+			<div class="bx_name clearfix por">
+				<p class="bx_name_p fl"><i></i>证件号码：</p>
+				<div class="por bx_name1 fl">
+					<input type="text" class="fl bx_No" />
+				</div>
+				<span class="bx_name_span fl">证件号码不能为空</span>
+			</div>
+			<div class="bx_name clearfix por">
+				<p class="bx_name_p fl"><i></i>移动电话：</p>
+				<div class="por bx_name1 fl">
+					<input type="text" class="fl bx_No bx_No1" />
+				</div>
+				<span class="bx_name_span fl">电话不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl"><i></i>电子邮件</p>
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+				<p class="bx_name_p1 fl">@</p>
+				<input type="text" class="fl bx_name_text" />
+				<span class="bx_name_span fl">电子邮件不能为空</span>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">行业职位：</p>
+				<div class="fl por">
+					<div class="Choice por">
+						<input type="button" value="不限" id="buttom" /><i></i></div>
+					<div class="poab" style="z-index:999; display:none;" id="poab">
+						<div class="Position clearfix">
+							<p class="Position_p fl">选择职位</p>
+							<input type="button" value="关闭" class="fr" id="guanbi" />
+							<input type="button" value="不限" class="fr" id="buxian" />
+
+						</div>
+						<div class="Occupation">
+							<div class="Sale clearfix">
+								<p class="Sale_p fl">销售|客服|市场</p>
+								<ul class="Sale_ul fr">
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i class=""></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="Sale Sale1 clearfix">
+								<p class="Sale_p fl">销售|客服|市场</p>
+								<ul class="Sale_ul fr">
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+									<li class="Sale_li" onMouseLeave="han1(this)">
+										<i class="Sale_li_i"></i>
+										<span class="Sale_li_span">销售业务</span>
+										<div class="Subclass" style="display:none;">
+											<ul class="Subclass_ul clearfix">
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+												<li class="Subclass_li"><i></i>项目总监</li>
+											</ul>
+											<div class="Subclass_div clearfix">
+												<p class="Subclass_div_p fl"><i></i>全选</p>
+												<input type="button" value="确认" class="Subclass_input fl" />
+												<input type="button" value="取消" class="Subclass_input1 fl" />
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fl">
+					<div class="Choice por">
+						<input type="button" value="不限" id="zhiye" /><i></i></div>
+					<div class="poab poab1" style="z-index:999; display:none;" id="zhiye1">
+						<div class="Position clearfix">
+							<p class="Position_p fl">选择职位</p>
+							<input type="button" value="关闭" class="fr" id="guanbi1" />
+							<input type="button" value="确定" class="fr" id="buxian1" />
+
+						</div>
+						<div class="Occupation Occup">
+							<div class="Sale clearfix">
+								<p class="Sale_p fl">销售|客服|市场</p>
+								<ul class="Sale_ul fr">
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+								</ul>
+							</div>
+							<div class="Sale Sale1 clearfix">
+								<p class="Sale_p fl">销售|客服|市场</p>
+								<ul class="Sale_ul fr">
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+									<li class="Sale_li">
+										<i class="Sale1_lii"></i>
+										<span class="Sale_li_span d">销售业务</span>
+
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">单位全称</p>
+				<input type="text" class="fl bx_name_text bx_Company" />
+				<p class="bx_name_p fl">部门名称</p>
+				<input type="text" class="fl bx_name_text bx_Company1" />
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">单位性质：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.机关、事业单位</p>
+					<input type="radio" name="wei" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.国有企业</p>
+					<input type="radio" name="wei" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.外商独资企业</p>
+					<input type="radio" name="wei" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">4.中外合资/合作企业</p>
+					<input type="radio" name="wei" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<br>
+				<br>
+				<div class="bx_left">
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">5.股份制企业</p>
+						<input type="radio" name="wei" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">6.私营企业</p>
+						<input type="radio" name="wei" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">7.其他</p>
+						<input type="radio" name="wei" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+				</div>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">企业规模：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.20人以下</p>
+					<input type="radio" name="qi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.20-50人</p>
+					<input type="radio" name="qi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.51-100人</p>
+					<input type="radio" name="qi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">4.101-500人</p>
+					<input type="radio" name="qi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<br>
+				<br>
+				<div class="bx_left">
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">5.501-1000人</p>
+						<input type="radio" name="qi" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">6.1001-5000人</p>
+						<input type="radio" name="qi" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">7.5000人以上</p>
+						<input type="radio" name="qi" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+				</div>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务：</p>
+				<p class="bx_Post fl">公务员类</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.厅局级以上</p>
+					<input type="radio" name="hui" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.处级</p>
+					<input type="radio" name="hui" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.科级</p>
+					<input type="radio" name="hui" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">4.一般干部</p>
+					<input type="radio" name="hui" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<br>
+				<br>
+				<div class="bx_left">
+					<p class="bx_Post fl">非公务员类</p>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">5.企业负责人</p>
+						<input type="radio" name="hui" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">6.中层管理</p>
+						<input type="radio" name="hui" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">7.一般管理</p>
+						<input type="radio" name="hui" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">7.一般员工</p>
+						<input type="radio" name="hui" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+					<label class="clearfix bx_Marriage fl">
+						<p class="fl">7.其他</p>
+						<input type="radio" name="hui" class="bx_hun" />
+						<i class="bx_yin"></i>
+					</label>
+				</div>
+			</div>
+
+			<p class="bx_Basic bx_Basic1">您的住址信息资料</p>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">单位地址：</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">省（直辖市）</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">市</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">区（县、县级市）</p>
+			</div>
+			<div class="bx_name clearfix">
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+				<p class="bx_name_p1 fl">邮编</p>
+				<input type="text" class="fl bx_name_text" />
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">住宅地址：</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">省（直辖市）</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">市</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">区（县、县级市）</p>
+			</div>
+			<div class="bx_name clearfix">
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+				<p class="bx_name_p1 fl">邮编</p>
+				<input type="text" class="fl bx_name_text" />
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">户籍地址：</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">省（直辖市）</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">市</p>
+				<input type="text" class="fl bx_name_text" />
+				<p class="bx_name_p1 fl">区（县、县级市）</p>
+			</div>
+			<div class="bx_name clearfix">
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+				<p class="bx_name_p1 fl">邮编</p>
+				<input type="text" class="fl bx_name_text" />
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">指定对账单地址：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.单位地址</p>
+					<input type="radio" name="zhi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.住宅地址</p>
+					<input type="radio" name="zhi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.户籍地址</p>
+					<input type="radio" name="zhi" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<p class="bx_name_p1 fl">（如您未指定，将寄往您的单位地址）</p>
+			</div>
+			<p class="bx_Basic bx_Basic1">您的联系人资料（无需承担担保责任）</p>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">联系人：</p>
+				<p class="bx_name_p1 fl">姓名</p>
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+				<p class="bx_name_p1 fl">与联系人关系</p>
+				<input type="text" class="fl bx_name_text" />
+			</div>
+			<div class="bx_name clearfix por">
+				<p class="bx_name_p fl">移动电话：</p>
+				<div class="por bx_name1 fl">
+					<input type="text" class="fl bx_No bx_No1" />
+				</div>
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">直系亲属：</p>
+				<p class="bx_name_p1 fl">姓名</p>
+				<input type="text" class="fl bx_name_text bx_name_text2" />
+			</div>
+			<div class="bx_name clearfix">
+				<p class="bx_name_p fl">与申请人关系：</p>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">1.配偶</p>
+					<input type="radio" name="yu" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">2.父母</p>
+					<input type="radio" name="yu" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.子女</p>
+					<input type="radio" name="yu" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+				<label class="clearfix bx_Marriage fl">
+					<p class="fl">3.兄弟姐妹</p>
+					<input type="radio" name="yu" class="bx_hun" />
+					<i class="bx_yin"></i>
+				</label>
+			</div>
+			<div class="bx_name clearfix por">
+				<p class="bx_name_p fl">移动电话：</p>
+				<div class="por bx_name1 fl">
+					<input type="text" class="fl bx_No bx_No1" />
+				</div>
+			</div>
+			<p class="bx_Basic bx_Basic1">申请养老保险声明</p>
+			<div class="bx_Statement">
+				<p>点击送养老保险是呆呆购物网站为提供网站流量和用户粘度而设置的一项最具吸引力的一种功能。在呆呆购物网首页，提供送点击就送保险的功能。每日可根据不同会员级别送养老保险，一般每日可以点击两次，每点击一次送10元养老保险，一般一天可以送出20元保险，系统设定一年期限必须点够500次，才能在年终申请5000元的养老保险金，年度计算是以第一次点击开始时间后延365天为一个年度周期进行计算的。一个年度内若用户点击够了500次后可以通过个人中心的申请养老保险功能提交申请养老保险单，申请单批准后呆呆通过代理缴纳方式或直接现金方式提供申请人获得5000元养老保险金。</p>
+				<p>此外，当用户在一个年度内完成了500次的点击量后，再进行点击送养老保险时系统送出的会是随机的金币，金币值送从1枚金币到10枚金币随机赠送。另外呆呆购物网站还有一类送养老保险的方式：呆呆慈善行志愿者送养老保险。网站提供呆呆慈善行志愿者申请入口，会员通过申请志愿者成为呆呆慈善行志愿者后，通过组织、参与慈善行活动，发布有关慈善行文章、捐款等任务，其中，文章被呆呆网站采纳并刊登到慈善报道栏目中的文章达到一定数量后（280篇/年 暂定），可以在网站上个人中心中申请养老保险，经过审批核实后赠送5000元养老保险。</p>
+			</div>
+			<input type="button" value="同意申请" class="bx_but" />
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			$('*[name=date15]').appendDtpicker({
+				"autodateOnStart": false,
+				"closeOnSelected": true,
+				"todayButton": false,
+				"dateOnly": true,
+				"dateFormat": "YYYY-MM-DD"
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -37,6 +37,14 @@ window.onload=function (){
 				}
 			};
 		})(i);
+
+	}
+	oUl.onmouseout=function(){
+		alert(1);
+		for(var i=0; i<oUl.length; i++){
+						startMove(aLi[i],{left:w-(aLi.length-i)*defaultW},500,'ease-out')
+					
+				}
 	}
 };
 </script>

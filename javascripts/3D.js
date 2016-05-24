@@ -234,6 +234,60 @@ window.onload=function(){
 	    }
 	}
 
+
+	//整页
+	var oSfq=document.getElementById('sfq');
+	var aFq=oSfq.children;
+	var at=0;
+	var zong=700;
+	for(var i=1; i<aFq.length; i++){
+		aFq[i].style.left=zong-(aFq.length-i)*100+'px';
+		aFq[i].index=i;
+		aFq[i].onmouseover=function(){
+			at=this.index
+			if(at!=0){
+				for(var j=1; j<=at; j++){
+					startMove(aFq[j].children[0],{left:-200},{duration:500,easing:'ease-out'});
+				}
+				at--;
+			}
+		}
+		aFq[i].onmouseout=function(){
+			at=this.index
+			if(at!=0){
+				for(var j=1; j<=at; j++){
+					startMove(aFq[j].children[0],{left:0},{duration:500,easing:'ease-out'});
+				}
+				at--;
+			}
+		}
+	}
+	// var oSfq=document.getElementById('sfq');
+	// var aFq=oSfq.children;
+	// var defaultW=40;
+	// var w=600;
+	
+	// for(var i=1; i<aFq.length; i++){
+	// 	aFq[i].style.left=w-(aFq.length-i)*defaultW+'px';
+	// }
+	// for(var i=0; i<aFq.length; i++){
+	// 	(function (index){
+	// 		aFq[i].onmouseover=function (){
+	// 			for(var i=0; i<aFq.length; i++){
+	// 				if(i<=index){
+	// 					//aLi[i].style.left=i*defaultW+'px';
+	// 					startMove(aFq[i],{left:i*defaultW},{duration:500,easing:'ease-out'});
+	// 				}else{
+	// 				//aLi[i].style.left=w-(aLi.length-i)*defaultW+'px';
+	// 					startMove(aFq[i],{left:w-(aFq.length-i)*defaultW},{duration:500,easing:'ease-out'});
+	// 				}
+	// 			}
+	// 		};
+	// 	})(i);
+	// }
+
+
+
 //我的技能
 	var oWarks=document.getElementById('works');
 	var aLia = oWarks.getElementsByTagName('li');

@@ -372,3 +372,25 @@ h3{
 .explain .explain_li{
 	display: block;
 }
+
+/*.sfq{ width:600px; height:337px; margin:100px auto; overflow:hidden; position:relative; }
+.sfq li{ position:absolute; top:0; width:600px; height:337px; }
+.sfq img{ width:100%; height:337px; }*/
+
+.sfq{
+	width: 700px;
+	height: 600px;
+	margin:50px auto;
+	position: relative;
+	overflow: hidden;
+}
+.sfq img{
+	width: 300px;
+	height: 600px;
+	position: absolute;
+	left: 0px;
+}
+.sfq li{
+	position: absolute;
+	left: 0px; top: 0px;
+}
