@@ -1,68 +1,32 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>  
 <html>
-<head>
-<meta charset="utf-8">
-<title>效验</title>
-<style>
-div{
-	line-height: 40px;
-}
-</style>
-<script>
-window.onload=function (){
-	var oTxt=document.getElementById('txt1');
-	var oBtn=document.getElementById('btn1');
-	var oTxt2=document.getElementById('txt2');
-	var oBtn2=document.getElementById('btn2');
-	var oTxt3=document.getElementById('txt3');
-	var oBtn3=document.getElementById('btn3');
-	var oTxt4=document.getElementById('txt4');
-	var oBtn4=document.getElementById('btn4');
-	
-	oBtn.onclick=function (){
-		var re=/^0[1-9]\d{1,2}\-[1-9]\d{6,7}$/;
-		alert(re.test(oTxt.value));
-	};
-	oBtn2.onclick=function (){
-		var re=/^(1[89])|([2-9]\d)|(100)$/;
-		alert(re.test(oTxt2.value));
-	};
-	oBtn3.onclick=function (){
-		var re=/^1[3-578]\d{9}$/;
-		alert(re.test(oTxt3.value));
-	};
-	oBtn4.onclick=function (){
-		var re=/^\w+@[0-9a-zA-Z\-]+(\.[a-zA-Z]{2,8}){1,2}$/;
-		alert(re.test(oTxt4.value));
-	};
-};
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}  
+</style>  
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rBvlS6tSHqBvcUPiEOCftugGFc6GTC6B">
+//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
 </script>
-</head>
 
-<body>
-<div>
-	固定电话
-	<input type="text" id="txt1" />
-    <input type="button" id="btn1" value="校验" />
-</div> 
-<div>
-	年龄（18-100）
-	<input type="text" id="txt2" />
-    <input type="button" id="btn2" value="校验" />
-</div>  
-<div>
-	手机号
-	<input type="text" id="txt3" />
-    <input type="button" id="btn3" value="校验" />
-</div> 
-<div>
-	邮箱
-	<input type="text" id="txt4" />
-    <input type="button" id="btn4" value="校验" />
-</div>    
-</body>
+</head>  
+ 
+<body>  
+<div id="container"></div> 
+<script type="text/javascript"> 
+var map = new BMap.Map("container");
+// 创建地图实例  
+var point = new BMap.Point(116.404, 39.915);
+// 创建点坐标  
+map.centerAndZoom(point, 15);
+// 初始化地图，设置中心点坐标和地图级别  
+</script>  
+</body>  
 </html>
-
 
 
 
