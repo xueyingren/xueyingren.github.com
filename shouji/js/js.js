@@ -18,3 +18,4 @@ window.onload=function (){
 		wufneg(aXk[i],'con_lun_li');
 	}
 };
+function tab(){alert(1)}
